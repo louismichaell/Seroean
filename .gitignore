@@ -1,0 +1,4 @@
+/node_modules
+.env
+package-lock.json
+seroean-apps-01f099c49c37.json
