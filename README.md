@@ -84,7 +84,7 @@
 - **Method**: `POST`
 - **Request Body**:
   - `email` as `string` - `Email`
-  - `otp` as `string` - `Email`
+  - `otp` as `string` - `Password`
 
 ```json
 {
