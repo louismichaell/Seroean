@@ -17,6 +17,7 @@ const notifikasiRoutes = require('../routes/notifikasi.routes');
 const ulasanRoutes = require('../routes/ulasan.routes');
 const favoriteRoutes = require('../routes/favorite.routes');
 const userRoutes = require('../routes/user.routes');
+const pemanduRoutes = require('../routes/pemandu.routes');
 
 (async () => {
     const now = getCurrentTime();
@@ -64,6 +65,7 @@ const userRoutes = require('../routes/user.routes');
     server.route(ulasanRoutes);
     server.route(favoriteRoutes);
     server.route(userRoutes);
+    server.route(pemanduRoutes);
 
     server.route({
         method: '*',

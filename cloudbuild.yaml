@@ -1,0 +1,34 @@
+steps:
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/seroean/seroean', '.']
+  
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/seroean/seroean']
+  
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      - 'run'
+      - 'deploy'
+      - 'seroean'
+      - '--image'
+      - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/seroean/seroean'
+      - '--region'
+      - '${_REGION}'
+      - '--platform'
+      - 'managed'
+      - '--allow-unauthenticated'
+      - '--set-env-vars'
+      - 'PROJECT_ID=${PROJECT_ID}'
+      - '--set-secrets'
+      - 'JWT_SECRET=JWT_SECRET:latest,JWT_AUD=JWT_AUD:latest,JWT_ISS=JWT_ISS:latest,JWT_SUB=JWT_SUB:latest,JWT_EXPIRES_IN=JWT_EXPIRES_IN:latest,RESET_PASSWORD_EXPIRY=RESET_PASSWORD_EXPIRY:latest,EMAIL_USER=EMAIL_USER:latest,PROFILE_PICTURE_DEFAULT=PROFILE_PICTURE_DEFAULT:latest,BUCKET_NAME=BUCKET_NAME:latest,EMAIL_PASS=EMAIL_PASS:latest'
+
+options:
+  logging: CLOUD_LOGGING_ONLY
+
+substitutions:
+  _REGION: asia-southeast2
+
+images:
+  - 'asia-southeast2-docker.pkg.dev/$PROJECT_ID/seroean/seroean'
