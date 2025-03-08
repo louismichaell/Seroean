@@ -19,37 +19,47 @@ const checkEmailExistsHandler = async (request, h) => {
         }
 
         if (!email) {
-            const boomError = Boom.badRequest('Harap isi email.');
-            return h.response({
-                status: boomError.output.statusCode,
-                message: boomError.message,
-                error: true
-            }).code(boomError.output.statusCode);
+            return Boom.badRequest('Email tidak boleh kosong, Silahkan isi email anda.');
         }
 
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         if (!emailRegex.test(email) || /\r|\n/.test(email)) {
-            const boomError = Boom.badRequest('Format email tidak valid, harap masukkan alamat email yang benar.');
-            return h.response({
-                status: boomError.output.statusCode,
-                message: boomError.message,
-                error: true
-            }).code(boomError.output.statusCode);
+            return Boom.badRequest('Format email tidak valid, harap masukkan alamat email yang benar.');
         }
+
         const user = await userService.findUserByEmail(email);
         const exists = user !== null;
 
+        if (!exists) {
+            return h.response({
+                status: 200,
+                message: 'Email belum terdaftar.',
+                exists: false,
+                error: false
+            }).code(200);
+        }
+
+        if (!user.is_otp_verified) {
+            return h.response({
+                status: 401,
+                message: 'Akun belum diverifikasi, silakan masukkan OTP terlebih dahulu.',
+                exists: true,
+                is_otp_verified: false,
+                error: true
+            }).code(401);
+        }
+
         return h.response({
             status: 200,
-            message: exists ? 'Email sudah terdaftar.' : 'Email belum terdaftar.',
-            exists,
+            message: 'Email sudah terdaftar.',
+            exists: true,
+            is_otp_verified: true,
             error: false
         }).code(200);
     } catch (error) {
         return Boom.badRequest(error.message);
     }
 };
-
 
 const getUserBiodataHandler = async (request, h) => {
     try {
