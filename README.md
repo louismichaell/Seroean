@@ -74,7 +74,7 @@
 ```json
 {
     "status": 200,
-    "message": "Token reset password telah dikirim ke email.",
+    "message": "Berhasil mengirim kode OTP.",
     "error": false
 }
 ```

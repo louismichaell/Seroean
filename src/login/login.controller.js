@@ -1,4 +1,5 @@
 const loginService = require('../login/login.service');
+const userModule = require('../user/user.module');
 const Boom = require('@hapi/boom');
 
 const loginHandler = async (request, h) => {
@@ -52,6 +53,15 @@ const loginHandler = async (request, h) => {
                 message: boomError.message,
                 error: true
             }).code(boomError.output.statusCode);
+        }
+
+        const user = await userModule.findUserByEmail(email);
+        if (!user) {
+            return Boom.notFound('User tidak ditemukan.');
+        }
+
+        if (!user.is_otp_verified) {
+            return Boom.unauthorized('Akun belum diverifikasi, Silahkan masukkan OTP terlebih dahulu.');
         }
 
         const response = await loginService.loginUser(request.payload);

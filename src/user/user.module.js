@@ -32,7 +32,23 @@ const updateUserData = async (userId, biodata) => {
     return updatedUser.data();
 };
 
+const updateUserOtpStatus = async (userId, isVerified) => {
+    const userRef = userCollection.doc(userId);
+    await userRef.update({ is_otp_verified: isVerified });
+};
+
+const findUserByEmail = async (email) => {
+    const querySnapshot = await userCollection.where('email', '==', email).get();
+    if (querySnapshot.empty) {
+        return null;
+    }
+    const userDoc = querySnapshot.docs[0];
+    return { user_id: userDoc.id, ...userDoc.data() };
+};
+
 module.exports = {
     findUserById,
-    updateUserData
+    updateUserData,
+    updateUserOtpStatus,
+    findUserByEmail
 };

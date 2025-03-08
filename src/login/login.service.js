@@ -14,7 +14,7 @@ const loginUser = async ({ email, password }) => {
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid) {
-        throw new Error('Kata sandi salah, silakan periksa kembali dan coba lagi.');
+        throw new Error('Kata sandi salah, Silahkan periksa kembali dan coba lagi.');
     }
 
     const token = jwt.sign(

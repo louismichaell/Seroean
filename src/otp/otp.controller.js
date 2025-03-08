@@ -1,4 +1,5 @@
 const otpService = require('../otp/otp.service');
+const userModule = require('../user/user.module');
 const Boom = require('@hapi/boom');
 
 const requestOTP = async (request, h) => {
@@ -89,6 +90,13 @@ const verifyOTP = async (request, h) => {
                 error: true
             }).code(boomError.output.statusCode);
         }
+
+        const user = await userModule.findUserByEmail(email);
+        if (!user) {
+            return Boom.notFound('User tidak ditemukan.');
+        }
+
+        await userModule.updateUserOtpStatus(user.user_id, true);
 
         const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         if (!emailRegex.test(email) || /\r|\n/.test(email)) {
