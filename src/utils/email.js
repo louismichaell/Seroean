@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendResetPasswordEmail = async (email, token) => {
-    const resetLink = `http:localhost:3000/auth/reset-password?token=${token}`;
+    const resetLink = `https://seroean-652043579010.asia-southeast2.run.app/auth/reset-password?token=${token}`;
     const mailOptions = {
         from: `"noreply.seroean" <${process.env.EMAIL_USER}>`,
         to: email,
@@ -210,7 +210,7 @@ const sendOTPEmail = async (email, otp) => {
                 <div class="header">
                     <img src="https://i.imgur.com/AlSUkim.png" alt="Seroean Ilustrasi">
                 </div>
-                <h2>Hai Pengguna Seroean,</h2>
+                <h2>Hi Seroean User,</h2>
                 <p>Terima kasih telah menggunakan layanan Seroean. Berikut adalah kode OTP untuk melakukan verifikasi email pada saat proses registrasi menggunakan email</p>
                 <h1>${otp}</h1>
                 <p class="expiry-info">Kode OTP ini berlaku selama 5 menit ke depan. Jika Anda tidak melakukan permintaan ini, Anda dapat mengabaikan email ini dengan aman. Jika ada pertanyaan atau masalah, jangan ragu untuk menghubungi tim dukungan kami. Terima kasih atas kepercayaan Anda,</p>
