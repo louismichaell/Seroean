@@ -39,8 +39,13 @@ const getUserById = async (userId) => {
     };
 };
 
+const findUserByEmail = async (email) => {
+    return await userModule.findUserByEmail(email);
+};
+
 module.exports = {
     getUserBiodata,
     updateUserBiodata,
-    getUserById
+    getUserById,
+    findUserByEmail
 };

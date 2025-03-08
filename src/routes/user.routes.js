@@ -1,6 +1,14 @@
-const { getUserBiodataHandler, updateUserBiodataHandler, getUserDetailByIdHandler } = require('../user/user.controller');
+const { getUserBiodataHandler, checkEmailExistsHandler, updateUserBiodataHandler, getUserDetailByIdHandler } = require('../user/user.controller');
 
 module.exports = [
+    {
+        method: 'POST',
+        path: '/check-email',
+        handler: checkEmailExistsHandler,
+        options: {
+            auth: false,
+        },
+    },
     {
         method: 'GET',
         path: '/biodata',

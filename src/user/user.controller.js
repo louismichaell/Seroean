@@ -2,6 +2,55 @@ const userService = require('../user/user.service');
 const Boom = require('@hapi/boom');
 const { uploadFileToCloudStorage } = require('../server/storage');
 
+const checkEmailExistsHandler = async (request, h) => {
+    try {
+        const { email } = request.payload;
+        const allowedParams = ['email'];
+        const payloadKeys = Object.keys(request.payload);
+
+        const invalidParams = payloadKeys.filter(key => !allowedParams.includes(key));
+        if (invalidParams.length > 0) {
+            const boomError = Boom.badRequest(`Parameter / ${invalidParams.join(', ')} / tidak diizinkan.`);
+            return h.response({
+                status: boomError.output.statusCode,
+                message: boomError.message,
+                error: true
+            }).code(boomError.output.statusCode);
+        }
+
+        if (!email) {
+            const boomError = Boom.badRequest('Harap isi email.');
+            return h.response({
+                status: boomError.output.statusCode,
+                message: boomError.message,
+                error: true
+            }).code(boomError.output.statusCode);
+        }
+
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        if (!emailRegex.test(email) || /\r|\n/.test(email)) {
+            const boomError = Boom.badRequest('Format email tidak valid, harap masukkan alamat email yang benar.');
+            return h.response({
+                status: boomError.output.statusCode,
+                message: boomError.message,
+                error: true
+            }).code(boomError.output.statusCode);
+        }
+        const user = await userService.findUserByEmail(email);
+        const exists = user !== null;
+
+        return h.response({
+            status: 200,
+            message: exists ? 'Email sudah terdaftar.' : 'Email belum terdaftar.',
+            exists,
+            error: false
+        }).code(200);
+    } catch (error) {
+        return Boom.badRequest(error.message);
+    }
+};
+
+
 const getUserBiodataHandler = async (request, h) => {
     try {
         const { userId } = request.auth.credentials;
@@ -26,7 +75,7 @@ const updateUserBiodataHandler = async (request, h) => {
     try {
         const { userId } = request.auth.credentials;
         const { name, location } = request.payload;
-        
+
         const allowedParams = ['name', 'location', 'image'];
         const payloadKeys = Object.keys(request.payload);
         const invalidParams = payloadKeys.filter(key => !allowedParams.includes(key));
@@ -114,5 +163,6 @@ const getUserDetailByIdHandler = async (request, h) => {
 module.exports = {
     getUserBiodataHandler,
     updateUserBiodataHandler,
-    getUserDetailByIdHandler
+    getUserDetailByIdHandler,
+    checkEmailExistsHandler
 };
