@@ -44,7 +44,7 @@ const checkEmailExistsHandler = async (request, h) => {
                 status: 401,
                 message: 'Akun belum diverifikasi, silakan masukkan OTP terlebih dahulu.',
                 exists: true,
-                is_otp_verified: false,
+                isVerified: false,
                 error: true
             }).code(401);
         }
@@ -53,7 +53,7 @@ const checkEmailExistsHandler = async (request, h) => {
             status: 200,
             message: 'Email sudah terdaftar.',
             exists: true,
-            is_otp_verified: true,
+            isVerified: true,
             error: false
         }).code(200);
     } catch (error) {
