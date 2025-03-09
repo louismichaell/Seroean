@@ -85,16 +85,16 @@ const addKuliner = async (request, h) => {
             }).code(boomError.output.statusCode);
         }
 
-        const phoneRegex = /^(\+?\d{1,3})?\d{8,15}$/;
+        const phoneRegex = /^\+?\d{8,15}$/;
         if (!phoneRegex.test(telepon)) {
-            const boomError = Boom.badRequest('Invalid phone number format, Please use format +0123456789 or 08123456789.');
+            const boomError = Boom.badRequest('Silahkan gunakan format sebagai berikut +0123456789 atau 08123456789.');
             return h.response({
                 status: boomError.output.statusCode,
                 message: boomError.message,
                 error: true
             }).code(boomError.output.statusCode);
         }
-        
+
         const ratingValue = parseFloat(rating);
         if (isNaN(ratingValue) || ratingValue < 0 || ratingValue > 5) {
             const boomError = Boom.badRequest('Rating harus berupa angka antara 0 hingga 5.');
