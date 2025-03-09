@@ -62,8 +62,8 @@ const addKuliner = async (request, h) => {
     }
 
     try {
-        const { nama, lokasi, provinsi, telepon, opsi, deskripsi, rating } = request.payload;
-        const allowedParams = ['nama', 'lokasi', 'provinsi', 'telepon', 'opsi', 'deskripsi', 'rating', 'foto', 'image', 'image2', 'image3'];
+        const { nama, lokasi, provinsi, telepon, opsi, rating } = request.payload;
+        const allowedParams = ['nama', 'lokasi', 'provinsi', 'telepon', 'opsi', 'rating', 'foto', 'image', 'image2', 'image3'];
         const payloadKeys = Object.keys(request.payload);
 
         const invalidParams = payloadKeys.filter(key => !allowedParams.includes(key));
@@ -76,7 +76,7 @@ const addKuliner = async (request, h) => {
             }).code(boomError.output.statusCode);
         }
 
-        if (!nama || !lokasi || !provinsi || !telepon || !opsi || !deskripsi || rating === undefined) {
+        if (!nama || !lokasi || !provinsi || !telepon || !opsi || rating === undefined) {
             const boomError = Boom.badRequest('Harap isi semua kolom yang diperlukan.');
             return h.response({
                 status: boomError.output.statusCode,
@@ -113,7 +113,6 @@ const addKuliner = async (request, h) => {
             provinsi, 
             telepon: teleponValue, 
             opsi, 
-            deskripsi, 
             rating: ratingValue, 
             ...uploadedImages 
         });
@@ -133,6 +132,5 @@ const addKuliner = async (request, h) => {
         }).code(boomError.output.statusCode);
     }
 };
-
 
 module.exports = { getAllKuliner, getKulinerById, addKuliner };
