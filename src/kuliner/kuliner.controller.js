@@ -85,8 +85,7 @@ const addKuliner = async (request, h) => {
             }).code(boomError.output.statusCode);
         }
 
-        const teleponValue = Number(telepon);
-        if (isNaN(teleponValue)) {
+        if (!/^\d+$/.test(telepon)) {
             const boomError = Boom.badRequest('Nomor telepon harus berupa angka.');
             return h.response({
                 status: boomError.output.statusCode,
@@ -94,7 +93,7 @@ const addKuliner = async (request, h) => {
                 error: true
             }).code(boomError.output.statusCode);
         }
-
+        
         const ratingValue = parseFloat(rating);
         if (isNaN(ratingValue) || ratingValue < 0 || ratingValue > 5) {
             const boomError = Boom.badRequest('Rating harus berupa angka antara 0 hingga 5.');
