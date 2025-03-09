@@ -110,7 +110,7 @@ const addKuliner = async (request, h) => {
             nama, 
             lokasi, 
             provinsi, 
-            telepon: teleponValue, 
+            telepon, 
             opsi, 
             rating: ratingValue, 
             ...uploadedImages 
