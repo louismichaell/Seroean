@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    android:elevation="2dp"
+    android:padding="12dp"
+    android:layout_gravity="center"
+    android:backgroundTint="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp">
+
+        <ImageView
+            android:id="@+id/Profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/profile"
+            android:background="@drawable/ic_circular"
+            android:src="@drawable/ic_profileacc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/iconUser"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_user"
+            android:contentDescription="@string/profile"
+            app:layout_constraintStart_toEndOf="@id/Profile"
+            app:layout_constraintTop_toTopOf="@id/Profile"
+            android:layout_marginStart="8dp" />
+
+        <TextView
+            android:id="@+id/tvHiNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/helveticabold"
+            android:text="@string/namauser"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iconUser"
+            app:layout_constraintTop_toTopOf="@id/Profile" />
+
+        <ImageView
+            android:id="@+id/iconPhone"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:alpha="0.5"
+            android:contentDescription="@string/noTelp"
+            android:src="@drawable/ic_phone"
+            app:layout_constraintStart_toEndOf="@id/Profile"
+            app:layout_constraintTop_toBottomOf="@id/iconUser"
+            tools:ignore="ImageContrastCheck" />
+
+        <TextView
+            android:id="@+id/tvSambutan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/nomorhp"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/iconPhone"
+            app:layout_constraintTop_toTopOf="@id/iconPhone" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

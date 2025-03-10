@@ -10,6 +10,7 @@ import com.seroean.apps.ui.kuliner.KulinerViewModel
 import com.seroean.apps.ui.login.LoginViewModel
 import com.seroean.apps.ui.maps.MapsViewModel
 import com.seroean.apps.ui.notifikasi.NotifikasiViewModel
+import com.seroean.apps.ui.pemandu.PemanduViewModel
 import com.seroean.apps.ui.pertanyaan.PertanyaanViewModel
 import com.seroean.apps.ui.profile.ProfileViewModel
 import com.seroean.apps.ui.register.RegisterViewModel
@@ -154,6 +155,16 @@ class MapsViewModelFactory(private val context: Context) : ViewModelProvider.Fac
         if (modelClass.isAssignableFrom(MapsViewModel::class.java)) {
             @Suppress("UNCHECKED_CAST")
             return MapsViewModel(Injection.provideRepository(context)) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}
+
+class PemanduViewModelFactory(private val context: Context) : ViewModelProvider.Factory {
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(PemanduViewModel::class.java)) {
+            @Suppress("UNCHECKED_CAST")
+            return PemanduViewModel(Injection.provideRepository(context)) as T
         }
         throw IllegalArgumentException("Unknown ViewModel class")
     }

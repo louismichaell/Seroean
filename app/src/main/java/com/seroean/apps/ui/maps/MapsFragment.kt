@@ -43,7 +43,6 @@ import java.util.Locale
 class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.InfoWindowAdapter {
     private var mMap: GoogleMap? = null
     private lateinit var fusedLocationClient: FusedLocationProviderClient
-    private var boundsBuilder = LatLngBounds.Builder()
     private var _binding: FragmentMapsBinding? = null
     private val binding get() = _binding!!
     private lateinit var preferences: SettingsPreferences
@@ -51,7 +50,7 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.InfoWindowAdapter
     private lateinit var viewModel: MapsViewModel
     private var searchHandler = Handler(Looper.getMainLooper())
     private var lastSearchRunnable: Runnable? = null
-    private var currentSearchMarker: Marker? = null
+    private val markerMap = HashMap<String, Marker>()
 
     private val bangkabelitungbonds = LatLngBounds(
         LatLng(-3.3, 105.0),
@@ -144,15 +143,45 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.InfoWindowAdapter
         mMap?.let { map ->
             data.forEach { wisata ->
                 val latLng = LatLng(wisata.lat ?: 0.0, wisata.lon ?: 0.0)
-                map.addMarker(
+                val marker = map.addMarker(
                     MarkerOptions()
                         .position(latLng)
                         .title(wisata.nama)
                         .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_BLUE))
-                )?.tag = wisata
-                boundsBuilder.include(latLng)
+                )
+                marker?.tag = wisata
+                markerMap[wisata.nama.lowercase()] = marker!!
             }
             adjustCamera()
+        }
+    }
+
+    private fun setMarkerKuliner(data: List<KulinerData>) {
+        mMap?.let { map ->
+            data.forEach { kuliner ->
+                val latLng = LatLng(kuliner.lat ?: 0.0, kuliner.lon ?: 0.0)
+                val marker = map.addMarker(
+                    MarkerOptions()
+                        .position(latLng)
+                        .title(kuliner.nama)
+                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
+                )
+                marker?.tag = kuliner
+                markerMap[kuliner.nama.lowercase()] = marker!!
+            }
+            adjustCamera()
+        }
+    }
+
+    private fun searchLocation(query: String) {
+        val lowerQuery = query.lowercase().trim()
+        val foundMarker = markerMap[lowerQuery]
+
+        if (foundMarker != null) {
+            mMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(foundMarker.position, 14f))
+            foundMarker.showInfoWindow()
+        } else {
+            customToast(getString(R.string.maps), getString(R.string.notfoundmaps), MotionToastStyle.ERROR)
         }
     }
 
@@ -173,49 +202,6 @@ class MapsFragment : Fragment(), OnMapReadyCallback, GoogleMap.InfoWindowAdapter
 
             override fun afterTextChanged(s: Editable?) {}
         })
-    }
-
-    private fun searchLocation(location: String) {
-        val geocoder = Geocoder(requireContext(), Locale.getDefault())
-        try {
-            val addresses = geocoder.getFromLocationName(location, 1)
-            if (!addresses.isNullOrEmpty()) {
-                val latLng = LatLng(addresses[0].latitude, addresses[0].longitude)
-
-                currentSearchMarker?.remove()
-
-                currentSearchMarker = mMap?.addMarker(
-                    MarkerOptions()
-                        .position(latLng)
-                        .title(location)
-                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_AZURE))
-                )
-
-                mMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 12f))
-            } else {
-                customToast(getString(R.string.maps), getString(R.string.notfoundmaps), MotionToastStyle.ERROR)
-            }
-        } catch (e: Exception) {
-            customToast(getString(R.string.maps), getString(R.string.notfoundmaps), MotionToastStyle.ERROR)
-        }
-    }
-
-
-
-    private fun setMarkerKuliner(data: List<KulinerData>) {
-        mMap?.let { map ->
-            data.forEach { kuliner ->
-                val latLng = LatLng(kuliner.lat ?: 0.0, kuliner.lon ?: 0.0)
-                map.addMarker(
-                    MarkerOptions()
-                        .position(latLng)
-                        .title(kuliner.nama)
-                        .icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED))
-                )?.tag = kuliner
-                boundsBuilder.include(latLng)
-            }
-            adjustCamera()
-        }
     }
 
     private fun adjustCamera() {

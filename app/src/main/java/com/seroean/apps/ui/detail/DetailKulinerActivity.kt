@@ -13,7 +13,7 @@ import com.seroean.apps.KulinerViewModelFactory
 import com.seroean.apps.R
 import com.seroean.apps.SettingsPreferences
 import com.seroean.apps.data.response.KulinerDetailData
-import com.seroean.apps.databinding.ActivityDetailKulinerMainBinding
+import com.seroean.apps.databinding.ActivityDetailKulinerBinding
 import com.seroean.apps.ui.VARIABEL
 import com.seroean.apps.ui.kuliner.KulinerViewModel
 import com.seroean.apps.ui.lightStatusBar
@@ -22,7 +22,7 @@ import com.seroean.apps.ui.login.dataStore
 
 class DetailKulinerActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityDetailKulinerMainBinding
+    private lateinit var binding: ActivityDetailKulinerBinding
     private lateinit var kulinerId: String
     private var token: String? = null
     private lateinit var preferences: SettingsPreferences
@@ -38,7 +38,7 @@ class DetailKulinerActivity : AppCompatActivity() {
         enableEdgeToEdge()
         lightStatusBar(window, false)
 
-        binding = ActivityDetailKulinerMainBinding.inflate(layoutInflater)
+        binding = ActivityDetailKulinerBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         preferences = SettingsPreferences.getInstance(dataStore)

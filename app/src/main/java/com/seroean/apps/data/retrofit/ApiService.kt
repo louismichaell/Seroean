@@ -10,6 +10,7 @@ import com.seroean.apps.data.response.EditProfileResponse
 import com.seroean.apps.data.response.KulinerResponse
 import com.seroean.apps.data.response.LoginResponse
 import com.seroean.apps.data.response.NotifikasiResponse
+import com.seroean.apps.data.response.PemanduResponse
 import com.seroean.apps.data.response.PertanyaanResponse
 import com.seroean.apps.data.response.RegisterResponse
 import com.seroean.apps.data.response.RequestOtpResponse
@@ -146,6 +147,12 @@ interface ApiService {
     fun getNotifikasi(
         @Header("Authorization") token: String
     ): Call<NotifikasiResponse>
+
+    @GET("pemandu/{wisataId}")
+    fun getPemanduByWisataId(
+        @Header("Authorization") token: String,
+        @Path("wisataId") wisataId: String
+    ): Call<PemanduResponse>
 
 
 //    @GET("stories")

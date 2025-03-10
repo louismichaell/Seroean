@@ -1,24 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="8dp"
-    app:cardCornerRadius="12dp"
+    app:cardCornerRadius="8dp"
     app:cardElevation="2dp"
-    android:elevation="2dp"
-    android:padding="12dp"
-    android:layout_gravity="center"
-    android:backgroundTint="@color/white">
+    android:backgroundTint="@color/white"
+    android:layout_gravity="center">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="8dp">
+        android:visibility="visible"
+        app:shimmer_auto_start="true"
+        app:shimmer_base_color="#E0E0E0"
+        app:shimmer_highlight_color="#B0B0B0"
+        app:shimmer_duration="1500">
 
-        <ImageView
-            android:id="@+id/Profile"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+            <View
+                android:id="@+id/shimmer_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/rounded_circle_shimmer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+            <View
+                android:id="@+id/shimmer_icon_user"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/rounded_circle_shimmer"
+                android:layout_marginStart="8dp"
+                app:layout_constraintStart_toEndOf="@id/shimmer_profile"
+                app:layout_constraintTop_toTopOf="@id/shimmer_profile" />
+            <View
+                android:id="@+id/shimmer_hi_nama"
+                android:layout_width="100dp"
+                android:layout_height="14dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_shimmer"
+                app:layout_constraintStart_toEndOf="@id/shimmer_icon_user"
+                app:layout_constraintTop_toTopOf="@id/shimmer_profile" />
+            <View
+                android:id="@+id/shimmer_icon_phone"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_circle_shimmer"
+                app:layout_constraintStart_toEndOf="@id/shimmer_profile"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_icon_user" />
+            <View
+                android:id="@+id/shimmer_sambutan"
+                android:layout_width="150dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/rounded_shimmer"
+                app:layout_constraintStart_toEndOf="@id/shimmer_icon_phone"
+                app:layout_constraintTop_toTopOf="@id/shimmer_icon_phone" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgProfile"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:contentDescription="@string/profile"
@@ -27,19 +89,17 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent" />
-
         <ImageView
             android:id="@+id/iconUser"
             android:layout_width="24dp"
             android:layout_height="24dp"
             android:src="@drawable/ic_user"
             android:contentDescription="@string/profile"
-            app:layout_constraintStart_toEndOf="@id/Profile"
-            app:layout_constraintTop_toTopOf="@id/Profile"
-            android:layout_marginStart="8dp" />
-
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/imgProfile"
+            app:layout_constraintTop_toTopOf="@id/imgProfile" />
         <TextView
-            android:id="@+id/tvHiNama"
+            android:id="@+id/tvnama"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -47,10 +107,10 @@
             android:fontFamily="@font/helveticabold"
             android:text="@string/namauser"
             android:textColor="@color/black"
-            android:textSize="14sp"
+            android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@id/iconUser"
-            app:layout_constraintTop_toTopOf="@id/Profile" />
+            app:layout_constraintTop_toTopOf="@id/imgProfile" />
 
         <ImageView
             android:id="@+id/iconPhone"
@@ -61,12 +121,11 @@
             android:alpha="0.5"
             android:contentDescription="@string/noTelp"
             android:src="@drawable/ic_phone"
-            app:layout_constraintStart_toEndOf="@id/Profile"
+            app:layout_constraintStart_toEndOf="@id/imgProfile"
             app:layout_constraintTop_toBottomOf="@id/iconUser"
             tools:ignore="ImageContrastCheck" />
-
         <TextView
-            android:id="@+id/tvSambutan"
+            android:id="@+id/tvnotelp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="4dp"
@@ -77,6 +136,5 @@
             android:textSize="12sp"
             app:layout_constraintStart_toEndOf="@id/iconPhone"
             app:layout_constraintTop_toTopOf="@id/iconPhone" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

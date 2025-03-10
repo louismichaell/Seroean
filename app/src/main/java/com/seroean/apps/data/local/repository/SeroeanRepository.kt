@@ -17,6 +17,8 @@ import com.seroean.apps.data.response.KulinerResponse
 import com.seroean.apps.data.response.LoginResponse
 import com.seroean.apps.data.response.NotifikasiData
 import com.seroean.apps.data.response.NotifikasiResponse
+import com.seroean.apps.data.response.PemanduData
+import com.seroean.apps.data.response.PemanduResponse
 import com.seroean.apps.data.response.PertanyaanData
 import com.seroean.apps.data.response.PertanyaanDetailData
 import com.seroean.apps.data.response.PertanyaanResponse
@@ -117,6 +119,9 @@ class SeroeanRepository(private val apiService: ApiService) {
 
     private val _detailPertanyaan = MutableLiveData<PertanyaanDetailData>()
     val detailPertanyaan: LiveData<PertanyaanDetailData> = _detailPertanyaan
+
+    private val _pemanduList = MutableLiveData<List<PemanduData>>()
+    val pemanduList: LiveData<List<PemanduData>> = _pemanduList
 
     private val _editBiodataStatus = MutableLiveData<String>()
     val editBiodataStatus: LiveData<String> = _editBiodataStatus
@@ -719,5 +724,33 @@ class SeroeanRepository(private val apiService: ApiService) {
             }
         })
     }
+
+    fun getPemanduByWisataId(token: String, wisataId: String) {
+        _isLoading.value = true
+        val api = ApiConfig.getApiService().getPemanduByWisataId("Bearer $token", wisataId)
+        api.enqueue(object : Callback<PemanduResponse> {
+            override fun onResponse(call: Call<PemanduResponse>, response: Response<PemanduResponse>) {
+                _isLoading.value = false
+                if (response.isSuccessful) {
+                    isError = false
+                    val responseBody = response.body()
+                    if (responseBody != null) {
+                        _pemanduList.value = responseBody.data
+                    }
+                    _message.value = responseBody?.message.toString()
+                } else {
+                    isError = true
+                    _message.value = response.message()
+                }
+            }
+
+            override fun onFailure(call: Call<PemanduResponse>, t: Throwable) {
+                _isLoading.value = false
+                isError = true
+                _message.value = t.message.toString()
+            }
+        })
+    }
+
 
 }

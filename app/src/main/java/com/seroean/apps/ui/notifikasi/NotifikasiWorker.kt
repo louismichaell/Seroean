@@ -7,6 +7,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.BitmapFactory
 import android.os.Build
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
@@ -43,10 +44,7 @@ class NotifikasiWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, par
                         val lastNotifiedId = sharedPref.getInt("LAST_NOTIF_ID", -1)
 
                         if (System.currentTimeMillis().toInt() != lastNotifiedId) {
-                            sendNotification(latestNotification.title, System.currentTimeMillis().toInt()) // Gunakan ID unik
-
-
-                            // Simpan ID notifikasi terbaru agar tidak mengirim berulang
+                            sendNotification(latestNotification.title, System.currentTimeMillis().toInt())
                             sharedPref.edit().putInt("LAST_NOTIF_ID", System.currentTimeMillis().toInt()).apply()
                         }
                     }
@@ -88,16 +86,18 @@ class NotifikasiWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, par
             }
         }
 
+        val smallIcon = BitmapFactory.decodeResource(context.resources, R.drawable.ic_logoapp)
+
         val notification = NotificationCompat.Builder(context, channelId)
             .setSmallIcon(R.drawable.ic_notification)
+            .setLargeIcon(smallIcon)
             .setContentTitle(context.getString(R.string.NotifikasiContent))
             .setContentText(title)
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setAutoCancel(true)
             .setContentIntent(pendingIntent)
             .build()
-
-        NotificationManagerCompat.from(context).notify(notificationId, notification) // Gunakan ID unik
+        NotificationManagerCompat.from(context).notify(notificationId, notification)
     }
 
     companion object {
@@ -110,14 +110,14 @@ class NotifikasiWorker(ctx: Context, params: WorkerParameters) : Worker(ctx, par
                 .setInputData(inputData)
                 .setConstraints(
                     Constraints.Builder()
-                        .setRequiredNetworkType(NetworkType.CONNECTED) // Hanya berjalan saat ada internet
+                        .setRequiredNetworkType(NetworkType.CONNECTED)
                         .build()
                 )
                 .build()
 
             workManager.enqueueUniquePeriodicWork(
                 "NotifikasiWorker",
-                ExistingPeriodicWorkPolicy.KEEP, // Pastikan tidak dijadwalkan ulang jika sudah ada
+                ExistingPeriodicWorkPolicy.KEEP,
                 request
             )
         }

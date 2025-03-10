@@ -7,24 +7,30 @@ import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.seroean.apps.AuthModelFactory
 import com.seroean.apps.AuthViewModel
+import com.seroean.apps.PemanduViewModelFactory
 import com.seroean.apps.R
 import com.seroean.apps.SettingsPreferences
 import com.seroean.apps.WisataViewModelFactory
+import com.seroean.apps.adapter.PemanduAdapter
+import com.seroean.apps.data.response.PemanduData
 import com.seroean.apps.data.response.WisataDetailData
-import com.seroean.apps.databinding.ActivityDetailWisataMainBinding
+import com.seroean.apps.databinding.ActivityDetailWisataBinding
 import com.seroean.apps.ui.VARIABEL
 import com.seroean.apps.ui.lightStatusBar
 import com.seroean.apps.ui.loadImage
 import com.seroean.apps.ui.login.dataStore
+import com.seroean.apps.ui.pemandu.PemanduViewModel
 import com.seroean.apps.ui.topwisata.WisataViewModel
 
 class DetailWisataActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityDetailWisataMainBinding
+    private lateinit var binding: ActivityDetailWisataBinding
     private lateinit var wisataId: String
     private var token: String? = null
+    private lateinit var pemanduAdapter: PemanduAdapter
     private lateinit var preferences: SettingsPreferences
 
     private val wisataViewModel: WisataViewModel by lazy {
@@ -33,18 +39,27 @@ class DetailWisataActivity : AppCompatActivity() {
         )[WisataViewModel::class.java]
     }
 
+    private val pemanduViewModel: PemanduViewModel by lazy {
+        ViewModelProvider(
+            this, PemanduViewModelFactory(this)
+        )[PemanduViewModel::class.java]
+    }
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         lightStatusBar(window, false)
 
-        binding = ActivityDetailWisataMainBinding.inflate(layoutInflater)
+        binding = ActivityDetailWisataBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         preferences = SettingsPreferences.getInstance(dataStore)
         wisataId = intent.getStringExtra(VARIABEL.EXTRA_WISATA_ID) ?: ""
 
         setupShimmerEffect(true)
+
+        setupRecyclerView()
 
         val authViewModel =
             ViewModelProvider(this, AuthModelFactory(preferences))[AuthViewModel::class.java]
@@ -53,6 +68,15 @@ class DetailWisataActivity : AppCompatActivity() {
             token = userToken
             if (!token.isNullOrEmpty()) {
                 wisataViewModel.getDetailWisata(token!!, wisataId)
+                pemanduViewModel.getPemanduByWisataId(token!!, wisataId)
+            }
+        }
+
+        pemanduViewModel.pemanduList.observe(this) { pemanduList ->
+            if (pemanduList.isNotEmpty()) {
+                setPemanduData(pemanduList)
+            } else {
+                binding.rvPemandu.visibility = View.GONE
             }
         }
 
@@ -97,6 +121,22 @@ class DetailWisataActivity : AppCompatActivity() {
         }
     }
 
+    private fun setupRecyclerView() {
+        pemanduAdapter = PemanduAdapter()
+        binding.rvPemandu.apply {
+            layoutManager = LinearLayoutManager(this@DetailWisataActivity)
+            setHasFixedSize(true)
+            adapter = pemanduAdapter
+        }
+    }
+
+    private fun setPemanduData(pemanduList: List<PemanduData>) {
+        if (::pemanduAdapter.isInitialized) {
+            pemanduAdapter.setData(pemanduList)
+            binding.rvPemandu.visibility = View.VISIBLE
+        }
+    }
+
     @SuppressLint("SetTextI18n")
     private fun showDetailWisata(wisata: WisataDetailData) {
         binding.apply {
@@ -111,4 +151,6 @@ class DetailWisataActivity : AppCompatActivity() {
             imgsub3.loadImage(wisata.image3)
         }
     }
+
+
 }
