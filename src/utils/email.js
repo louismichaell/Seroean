@@ -97,7 +97,7 @@ const sendResetPasswordEmail = async (email, token) => {
             
             <body>
                 <div class="container">
-                    <img src="https://storage.googleapis.com/seroean-buckets/forgot-pass.png" class="logo">
+                    <img src="https://storage.googleapis.com/seroean-buckets/member/Lupa.jpg" class="logo">
                     <h2>Hi Seroean User,</h2>
                     <p>Kami mendapatkan permintaan untuk mereset kata sandi akun Seroean Anda. Jangan khawatir, kami di sini untuk membantu!</p>
                     <p>Untuk mereset kata sandi Anda, cukup klik tombol di bawah ini.</p>
