@@ -12,8 +12,8 @@ const addWisata = async (request, h) => {
     }
 
     try {
-        const { nama, lokasi, provinsi, deskripsi, rating } = request.payload;
-        const allowedParams = ['nama', 'lokasi', 'provinsi', 'deskripsi', 'rating', 'foto', 'image', 'image2', 'image3'];
+        const { nama, lokasi, provinsi, deskripsi, rating, lon, lat } = request.payload;
+        const allowedParams = ['nama', 'lokasi', 'provinsi', 'deskripsi', 'rating', 'foto', 'image', 'image2', 'image3', 'lon', 'lat'];
         const payloadKeys = Object.keys(request.payload);
 
         const invalidParams = payloadKeys.filter(key => !allowedParams.includes(key));
@@ -26,7 +26,6 @@ const addWisata = async (request, h) => {
             }).code(boomError.output.statusCode);
         }
 
-    
         if (!nama || !lokasi || !provinsi || !deskripsi || rating === undefined) {
             const boomError = Boom.badRequest('Harap isi semua kolom yang diperlukan.');
             return h.response({
@@ -36,7 +35,6 @@ const addWisata = async (request, h) => {
             }).code(boomError.output.statusCode);
         }
 
-    
         const ratingValue = parseFloat(rating);
         if (isNaN(ratingValue) || ratingValue < 0 || ratingValue > 5) {
             const boomError = Boom.badRequest('Rating harus berupa angka antara 0 hingga 5.');
@@ -47,8 +45,20 @@ const addWisata = async (request, h) => {
             }).code(boomError.output.statusCode);
         }
 
+        const lonValue = lon ? parseFloat(lon) : null;
+        const latValue = lat ? parseFloat(lat) : null;
+
+        if ((lon && isNaN(lonValue)) || (lat && isNaN(latValue))) {
+            const boomError = Boom.badRequest('Longitude dan Latitude harus berupa angka yang valid.');
+            return h.response({
+                status: boomError.output.statusCode,
+                message: boomError.message,
+                error: true
+            }).code(boomError.output.statusCode);
+        }
+
         const uploadedImages = await wisataService.uploadWisataImages(request.payload);
-        await wisataService.addWisata({ nama, lokasi, provinsi, deskripsi, rating, ...uploadedImages });
+        await wisataService.addWisata({ nama, lokasi, provinsi, deskripsi, rating: ratingValue, lon: lonValue, lat: latValue, ...uploadedImages });
 
         return h.response({
             status: 201,
@@ -116,8 +126,8 @@ const getWisataById = async (request, h) => {
     }
 };
 
-
 module.exports = { 
     addWisata,
     getAllWisata,
-    getWisataById };
+    getWisataById 
+};
