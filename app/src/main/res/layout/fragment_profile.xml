@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.profile.ProfileFragment">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shimmer_auto_start="true"
+        app:shimmer_base_color="#E0E0E0"
+        app:shimmer_duration="1500"
+        app:shimmer_highlight_color="#B0B0B0">
+
+        <View
+            android:id="@+id/shimmer_profile_picture"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_circle_shimmer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/shimmer_user_name"
+            android:layout_width="150dp"
+            android:layout_height="20dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="150dp"
+            android:background="@drawable/rounded_shimmer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shimmer_profile_picture" />
+
+        <View
+            android:id="@+id/shimmer_user_email"
+            android:layout_width="200dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="180dp"
+            android:background="@drawable/rounded_shimmer"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/shimmer_user_name" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_custom_menu"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/rounded_circle_shimmer" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shimmer" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_circle_shimmer"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_custom_menu"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/rounded_circle_shimmer" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shimmer" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_circle_shimmer"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_custom_menu"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/rounded_circle_shimmer" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shimmer" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_circle_shimmer"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_custom_menu"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/rounded_circle_shimmer" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shimmer" />
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/rounded_circle_shimmer"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_custom_menu"
+                android:orientation="horizontal"
+                android:padding="12dp">
+
+                <View
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/rounded_circle_shimmer" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_shimmer" />
+            </LinearLayout>
+        </LinearLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/ivProfilePicture"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/ic_profileacc"
+            android:contentDescription="@string/profile_picture"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUserName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helveticabold"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/black"
+            android:text="@string/user_name"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/ivProfilePicture"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvUserEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/user_email"
+            android:fontFamily="@font/helvetica"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvUserName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tvUserEmail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/ln_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:background="@drawable/bg_custom_menu">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_user_black"
+                        android:contentDescription="@string/profile" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/black"
+                        android:layout_weight="1"
+                        android:text="@string/edit_profile"
+                        android:textSize="16sp" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/next"
+                        android:src="@drawable/ic_next"
+                        tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_disukai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:background="@drawable/bg_custom_menu">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_favoritenull"
+                        android:contentDescription="@string/disukai" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/disukai"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/next"
+                        android:src="@drawable/ic_next"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:background="@drawable/bg_custom_menu">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_pertanyaanumum"
+                        android:contentDescription="@string/general_questions" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/black"
+                        android:text="@string/general_questions"
+                        android:textSize="16sp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/next"
+                        android:src="@drawable/ic_next"
+                        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_about"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:background="@drawable/bg_custom_menu">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_tentangkami"
+                        android:contentDescription="@string/about_us" />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/black"
+                        android:text="@string/about_us"
+                        android:textSize="16sp"
+                        android:layout_weight="1" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/next"
+                        android:src="@drawable/ic_next"
+                        tools:ignore="TouchTargetSizeCheck" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_logout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="horizontal"
+                    android:padding="12dp"
+                    android:background="@drawable/bg_custom_menu"
+                    android:backgroundTint="@color/deepblue">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_logout"
+                        android:contentDescription="@string/LOGOUT" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica"
+                        android:textColor="@color/white"
+                        android:text="@string/LOGOUT"
+                        android:textSize="16sp"
+                        android:layout_marginStart="16dp" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

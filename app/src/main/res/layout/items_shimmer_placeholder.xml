@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.shimmer.ShimmerFrameLayout    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/shimmer_view_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:shimmer_auto_start="true"
+    app:shimmer_base_color="#E0E0E0"
+    app:shimmer_highlight_color="#B0B0B0"
+    app:shimmer_duration="1500">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/containerPlaceholder"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_margin="8dp"
+        app:cardCornerRadius="16dp"
+        app:cardBackgroundColor="@color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/shimmer_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rounded_shimmer_placeholder" />
+
+            <LinearLayout
+                android:id="@+id/shimmer_rating_favorite_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="8dp"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="60dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="16dp"
+                    android:background="@drawable/rounded_shimmer"/>
+
+                <View
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_marginStart="80dp"
+                    android:background="@drawable/rounded_circle_shimmer" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/shimmer_title_card"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="8dp"
+                android:background="@drawable/rounded_shimmer" />
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+</com.facebook.shimmer.ShimmerFrameLayout>

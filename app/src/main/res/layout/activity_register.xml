@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbarRegister"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginTop="10dp"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/backButtonRegister"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/kembali"
+                    android:src="@drawable/ic_back_black"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="DuplicateSpeakableTextCheck,TouchTargetSizeCheck" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <LinearLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="60dp"
+            android:orientation="vertical"
+            android:paddingLeft="28dp"
+            android:paddingRight="28dp"
+            android:paddingTop="20dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0">
+
+            <ImageView
+                android:id="@+id/Iv_Register"
+                android:layout_width="200dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/REGISTER_TEXT"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/ic_daftar"
+                tools:ignore="ImageContrastCheck" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/REGISTER_TEXT"
+                android:layout_marginTop="24dp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/helveticabold"
+                android:textSize="35sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_Welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:alpha="0.4"
+                android:fontFamily="@font/helvetica"
+                android:text="@string/MSG_REGISTER"
+                android:textColor="@color/black"
+                tools:ignore="TextContrastCheck" />
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="15dp" />
+
+            <LinearLayout
+                android:id="@+id/Ln_Register"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tv_Welcome">
+
+                <TextView
+                    android:id="@+id/tv_Name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="4dp"
+                    android:alpha="0.4"
+                    android:fontFamily="@font/helvetica"
+                    android:text="@string/FULL_NAME"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck" />
+
+                <com.seroean.apps.ui.customview.CustomViewName
+                    android:id="@+id/et_Name"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableEnd="@drawable/ic_user"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/HINT_FULL_NAME"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:padding="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="14sp"
+                    tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Email"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="4dp"
+                    android:alpha="0.4"
+                    android:fontFamily="@font/helvetica"
+                    android:text="@string/EMAIL"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck" />
+
+                <com.seroean.apps.ui.customview.CustomViewEmail
+                    android:id="@+id/et_Email"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableEnd="@drawable/ic_email"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/HINT_EMAIL"
+                    android:inputType="phone"
+                    android:maxLines="1"
+                    android:padding="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="14sp"
+                    tools:ignore="TextContrastCheck,VisualLintTextFieldSize" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Lokasi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="4dp"
+                    android:alpha="0.4"
+                    android:fontFamily="@font/helvetica"
+                    android:text="@string/LOKASI"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck" />
+
+                <com.seroean.apps.ui.customview.CustomViewLocation
+                    android:id="@+id/et_Lokasi"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="5dp"
+                    android:drawableEnd="@drawable/ic_maps"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/HINT_LOKASI"
+                    android:maxLines="1"
+                    android:padding="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="14sp"
+                    tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_Password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="4dp"
+                    android:alpha="0.4"
+                    android:fontFamily="@font/helvetica"
+                    android:text="@string/PASSWORD"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck" />
+
+                <com.seroean.apps.ui.customview.CustomViewPassword
+                    android:id="@+id/et_Pass"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/HINT_PASSWORD"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:padding="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="14sp"
+                    tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck,VisualLintTextFieldSize" />
+
+                <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="15dp" />
+
+                <TextView
+                    android:id="@+id/tv_ConfirmPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="start"
+                    android:layout_marginBottom="4dp"
+                    android:alpha="0.4"
+                    android:fontFamily="@font/helvetica"
+                    android:text="@string/CONFIRM_PASSWORD"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck" />
+
+                <com.seroean.apps.ui.customview.CustomViewPassword
+                    android:id="@+id/et_ConfirmPass"
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:layout_marginTop="5dp"
+                    android:drawablePadding="8dp"
+                    android:hint="@string/HINT_CONFIRM_PASSWORD"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:padding="16dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="14sp"
+                    tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnRegister"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:layout_marginTop="15dp"
+                    android:backgroundTint="@color/primary"
+                    android:elevation="0dp"
+                    android:translationZ="0dp"
+                    android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+                    android:fontFamily="@font/helvetica"
+                    android:text="@string/Berikutnya"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:cornerRadius="8dp"
+                    app:layout_constraintEnd_toEndOf="@+id/tv_Welcome"
+                    app:layout_constraintStart_toStartOf="@+id/tv_Welcome"
+                    app:layout_constraintTop_toBottomOf="@+id/open"
+                    tools:ignore="VisualLintButtonSize,DuplicateSpeakableTextCheck,TextContrastCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/tv_ihave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="4dp"
+                    android:fontFamily="@font/helvetica"
+                    android:text="@string/INFO_LOGIN_TEXT"
+                    android:textColor="@color/black"
+                    tools:ignore="TextContrastCheck" />
+
+                <TextView
+                    android:id="@+id/tv_logintxt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helvetica"
+                    android:text="@string/LOGIN_TEXT"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/primary"
+                    android:textStyle="bold"
+                    tools:ignore="TextContrastCheck" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="25dp" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/progressOverlay"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:background="@color/black"
+            android:alpha="0.5"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="200dp"
+            android:gravity="center"
+            android:padding="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                tools:visibility="visible"
+                style="?android:attr/progressBarStyleLargeInverse"/>
+
+            <TextView
+                android:id="@+id/tvLoading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica"
+                android:text="@string/memuat"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="gone"
+                tools:ignore="TextContrastCheck"
+                tools:visibility="visible" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

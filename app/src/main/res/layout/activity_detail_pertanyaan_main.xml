@@ -1,0 +1,201 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_marginTop="-15dp"
+        android:background="@drawable/bg_rounded_bottom"
+        android:elevation="1dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/backButtonPertanyaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/BACK_DESC"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/tvDetailPertanyaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/helveticabold"
+                android:text="@string/detailpertanyaan"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/backButtonPertanyaan"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="90dp">
+
+                <TextView
+                    android:id="@+id/tvTipePertanyaan"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helveticabold"
+                    android:text="@string/tipe"
+                    android:textColor="@color/primary"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextSizeCheck,TextContrastCheck" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/lnFoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvTitlePertanyaan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/helveticabold"
+                    android:text="@string/pertanyaan"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvJawaban"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helvetica"
+                    android:lineSpacingExtra="6dp"
+                    android:lineSpacingMultiplier="1"
+                    android:text="@string/jawaban"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:ignore="VisualLintLongText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnBantuan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvBantuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/helveticabold"
+                    android:text="@string/bantuan"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvJawabanBantuan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/helvetica"
+                    android:lineSpacingExtra="6dp"
+                    android:lineSpacingMultiplier="1"
+                    android:text="@string/txtbantuan"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:ignore="VisualLintLongText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lnUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvUpdateTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fontFamily="@font/helveticabold"
+                    android:text="@string/updatetitle"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:ignore="TextSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvDateTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="@font/helvetica"
+                    android:text="@string/datetime"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    tools:ignore="VisualLintLongText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/LnButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="370dp"
+                android:gravity="bottom"
+                android:orientation="vertical">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnLogin"
+                    android:layout_width="match_parent"
+                    android:layout_height="65dp"
+                    android:backgroundTint="@color/primary"
+                    android:elevation="0dp"
+                    android:fontFamily="@font/helveticabold"
+                    android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+                    android:text="@string/hubungi"
+                    android:textAllCaps="false"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:translationZ="0dp"
+                    app:cornerRadius="8dp"
+                    tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck,VisualLintButtonSize" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

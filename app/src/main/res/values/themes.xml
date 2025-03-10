@@ -1,0 +1,58 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.Seroean" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="colorPrimaryVariant">@color/black</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#00a0e4</item>
+        <item name="colorSecondaryVariant">@color/black</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.Seroean.NoActionBar" parent="Base.Theme.Seroean">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:windowTranslucentStatus">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:fitsSystemWindows">false</item>
+    </style>
+
+    <style name="Theme.Seroean" parent="Base.Theme.Seroean" />
+
+    <style name="OtpBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:background">@drawable/edit_text_background</item>
+        <item name="android:inputType">phone</item>
+        <item name="android:maxLength">1</item>
+        <item name="android:cursorVisible">false</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/hinttext</item>
+        <item name="android:autofillHints" tools:ignore="NewApi">phone</item>
+    </style>
+
+    <style name="SearchViewStyle" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/ic_bgsearch</item>
+        <item name="android:drawableLeft">@drawable/ic_round_search</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:inputType">text</item>
+        <item name="android:fontFamily">@font/helvetica</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:maxLines">1</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/hinttext</item>
+    </style>
+</resources>

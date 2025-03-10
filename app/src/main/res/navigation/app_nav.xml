@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@id/homeFragment"
+        android:name="com.seroean.apps.ui.beranda.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@id/budayaFragment"
+        android:name="com.seroean.apps.ui.budaya.BudayaFragment"
+        android:label="fragment_message"
+        tools:layout="@layout/fragment_budaya" />
+    <fragment
+        android:id="@id/mapsFragment"
+        android:name="com.seroean.apps.ui.maps.MapsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@id/profileFragment"
+        android:name="com.seroean.apps.ui.profile.ProfileFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_profile" />
+</navigation>

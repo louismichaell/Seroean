@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="3dp"
+    android:backgroundTint="@color/white"
+    android:layout_gravity="center">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:shimmer_auto_start="true"
+        app:shimmer_base_color="#E0E0E0"
+        app:shimmer_highlight_color="#B0B0B0"
+        app:shimmer_duration="1500">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="12dp">
+
+            <View
+                android:id="@+id/shimmer_question_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/rounded_circle_shimmer"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="@id/shimmer_question_icon"
+                app:layout_constraintStart_toEndOf="@id/shimmer_question_icon"
+                app:layout_constraintTop_toTopOf="@id/shimmer_question_icon"
+                tools:ignore="VisualLintBounds">
+
+                <View
+                    android:id="@+id/shimmer_tipe"
+                    android:layout_width="100dp"
+                    android:layout_height="16dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_shimmer" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <View
+                        android:id="@+id/shimmer_question"
+                        android:layout_width="0dp"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="4dp"
+                        android:layout_weight="1"
+                        android:background="@drawable/rounded_shimmer" />
+                    <View
+                        android:id="@+id/shimmer_next_quest"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginEnd="32dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@drawable/rounded_circle_shimmer" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="12dp"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <ImageView
+            android:id="@+id/ivQuestionIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:contentDescription="@string/general_questions"
+            android:src="@drawable/ic_question"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="ImageContrastCheck" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toEndOf="@id/ivQuestionIcon"
+            app:layout_constraintTop_toTopOf="@id/ivQuestionIcon"
+            app:layout_constraintBottom_toBottomOf="@id/ivQuestionIcon"
+            tools:ignore="VisualLintBounds">
+            <TextView
+                android:id="@+id/tvTipe"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/helveticabold"
+                android:text="@string/tipe"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:ignore="UseCompoundDrawables">
+                <TextView
+                    android:id="@+id/tvQuestion"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/helvetica"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/questions"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    android:layout_weight="1" />
+
+                <ImageView
+                    android:id="@+id/nextQuest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="60dp"
+                    android:layout_marginEnd="38dp"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="@string/next"
+                    android:src="@drawable/ic_next"
+                    app:tint="@color/menubottom"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

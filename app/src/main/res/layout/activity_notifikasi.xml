@@ -1,0 +1,108 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_marginTop="-15dp"
+        android:background="@drawable/bg_rounded_bottom"
+        android:elevation="1dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/backButtonNotifikasi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/BACK_DESC"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/tvAboutKami"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/helveticabold"
+                android:text="@string/Notifikasi"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/backButtonNotifikasi"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNotifikasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="82dp"
+            android:contentDescription="@string/budaya"
+            android:orientation="horizontal"
+            tools:listitem="@layout/items_notifikasi"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginTop="250dp"
+            android:src="@drawable/ic_notifikasi_img"
+            android:contentDescription="@string/Notifikasi"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTextNotifikasi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
+            android:textColor="@color/black"
+            android:text="@string/emptynotifikasi"
+            android:gravity="center_horizontal"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="6dp"
+            android:lineSpacingMultiplier="1"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/ivImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

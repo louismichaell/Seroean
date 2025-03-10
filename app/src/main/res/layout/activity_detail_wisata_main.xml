@@ -1,0 +1,689 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:shimmer_auto_start="true"
+        app:shimmer_base_color="#E0E0E0"
+        app:shimmer_highlight_color="#B0B0B0"
+        app:shimmer_duration="1500">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/shimmer_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/bg_rounded_bottom"
+            android:elevation="1dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <View
+                    android:id="@+id/shimmer_back_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/rounded_circle_shimmer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                <View
+                    android:id="@+id/shimmer_detail_wisata"
+                    android:layout_width="150dp"
+                    android:layout_height="18dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/rounded_shimmer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/shimmer_back_button"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp">
+                    <View
+                        android:id="@+id/shimmer_nama_wisata"
+                        android:layout_width="280dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <View
+                            android:id="@+id/shimmer_rating_count"
+                            android:layout_width="40dp"
+                            android:layout_height="20dp"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="4dp"
+                            android:background="@drawable/rounded_shimmer_placeholder" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <FrameLayout
+                    android:id="@+id/shimmer_detail_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/rounded_shimmer_placeholder">
+                    <View
+                        android:id="@+id/shimmer_share_button"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="16dp"
+                        android:layout_gravity="end|top"
+                        android:background="@drawable/rounded_circle_shimmer" />
+                </FrameLayout>
+
+                <LinearLayout
+                    android:id="@+id/shimmer_ln_foto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+                    <View
+                        android:id="@+id/shimmer_tv_foto"
+                        android:layout_width="120dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                    <View
+                        android:id="@+id/shimmer_sub_foto"
+                        android:layout_width="200dp"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/shimmer_horizontal_foto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:overScrollMode="never"
+                        android:scrollbars="none"
+                        tools:ignore="SpeakableTextPresentCheck">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <View
+                                android:layout_width="150dp"
+                                android:layout_height="80dp"
+                                android:background="@drawable/rounded_shimmer_placeholder" />
+
+                            <View
+                                android:layout_width="150dp"
+                                android:layout_height="80dp"
+                                android:layout_marginStart="4dp"
+                                android:background="@drawable/rounded_shimmer_placeholder" />
+
+                            <View
+                                android:layout_width="150dp"
+                                android:layout_height="80dp"
+                                android:layout_marginStart="4dp"
+                                android:background="@drawable/rounded_shimmer_placeholder" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/shimmer_ln_tentang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+                    <View
+                        android:id="@+id/shimmer_tv_tentang"
+                        android:layout_width="120dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                    <View
+                        android:id="@+id/shimmer_sub_tentang"
+                        android:layout_width="80dp"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                    <View
+                        android:id="@+id/shimmer_alamat"
+                        android:layout_width="300dp"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                    <View
+                        android:id="@+id/shimmer_sub_provinsi"
+                        android:layout_width="80dp"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                    <View
+                        android:id="@+id/shimmer_sub_provinsi_txt"
+                        android:layout_width="200dp"
+                        android:layout_height="14dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rounded_shimmer_placeholder" />
+
+                <LinearLayout
+                    android:id="@+id/shimmer_ln_deskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+                    <View
+                        android:id="@+id/shimmer_tv_deskripsi"
+                        android:layout_width="120dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                    <View
+                        android:id="@+id/shimmer_sub_deskripsi"
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                </LinearLayout>
+
+                <View
+                    android:id="@+id/shimmer_map_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/rounded_shimmer_placeholder" />
+
+                <LinearLayout
+                    android:id="@+id/shimmer_ln_pemandu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+                    <View
+                        android:id="@+id/shimmer_tv_pemandu"
+                        android:layout_width="120dp"
+                        android:layout_height="20dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/shimmer_rv_pemandu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        tools:listitem="@layout/items_shimmer_pemandu" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/shimmer_ln_ulasan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <View
+                            android:id="@+id/shimmer_tv_ulasan"
+                            android:layout_width="120dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/rounded_shimmer_placeholder" />
+                        <Space
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_weight="1" />
+                        <View
+                            android:id="@+id/shimmer_skip_button"
+                            android:layout_width="100dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/rounded_shimmer_placeholder" />
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/shimmer_rv_ulasan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        tools:listitem="@layout/items_shimmer_ulasan" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/bg_rounded_bottom"
+            android:elevation="1dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/backButtonWisata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/BACK_DESC"
+                    android:src="@drawable/ic_back_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TouchTargetSizeCheck" />
+                <TextView
+                    android:id="@+id/tvDetailWisata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/helveticabold"
+                    android:text="@string/detailwisata"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/backButtonWisata"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="80dp">
+                    <TextView
+                        android:id="@+id/tvNamaWisata"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="25sp"
+                        android:layout_marginEnd="80dp"
+                        android:fontFamily="@font/helveticabold"
+                        android:textColor="@color/black"
+                        android:textStyle="bold"
+                        android:text="@string/ketawai" />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginStart="32dp"
+                        android:layout_alignParentEnd="true"
+                        android:orientation="horizontal"
+                        tools:ignore="RelativeOverlap,UseCompoundDrawables">
+
+                        <ImageView
+                            android:id="@+id/iconStar"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginStart="4dp"
+                            android:contentDescription="@string/rating_star"
+                            android:src="@drawable/ic_star"
+                            tools:ignore="ImageContrastCheck" />
+                        <TextView
+                            android:id="@+id/tvRatingCount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/helvetica"
+                            android:layout_marginStart="2dp"
+                            android:layout_marginEnd="4dp"
+                            android:text="@string/rating"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardCornerRadius="16dp">
+                    <ImageView
+                        android:id="@+id/detailImageView"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:contentDescription="@string/ketawai"
+                        android:src="@drawable/ic_ketawai" />
+                    <FrameLayout
+                        android:id="@+id/shareButtonContainer"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="16dp"
+                        android:layout_gravity="end|top">
+                        <ImageView
+                            android:id="@+id/shareBackground"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:contentDescription="@string/share"
+                            android:src="@drawable/ic_circular_transparent" />
+
+                        <ImageButton
+                            android:id="@+id/btnSharing"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:contentDescription="@string/share"
+                            android:src="@drawable/ic_share"
+                            tools:ignore="TouchTargetSizeCheck,DuplicateSpeakableTextCheck" />
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/lnFoto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvFoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:fontFamily="@font/helveticabold"
+                        android:text="@string/txtFoto"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck" />
+                    <TextView
+                        android:id="@+id/tvSubFoto"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica"
+                        android:text="@string/txtSubFoto"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                    <HorizontalScrollView
+                        android:id="@+id/horizontalFoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:overScrollMode="never"
+                        android:scrollbars="none">
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                app:cardCornerRadius="8dp">
+                                <ImageView
+                                    android:id="@+id/imgsub1"
+                                    android:layout_width="150dp"
+                                    android:layout_height="80dp"
+                                    android:src="@drawable/ic_subketawai_1"
+                                    android:contentDescription="@string/ketawai"
+                                    android:scaleType="centerCrop" />
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                app:cardCornerRadius="8dp">
+                                <ImageView
+                                    android:id="@+id/imgsub2"
+                                    android:layout_width="150dp"
+                                    android:layout_height="80dp"
+                                    android:src="@drawable/ic_subketawai_2"
+                                    android:contentDescription="@string/ketawai"
+                                    android:scaleType="centerCrop" />
+                            </androidx.cardview.widget.CardView>
+                            <androidx.cardview.widget.CardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="4dp"
+                                app:cardCornerRadius="8dp">
+
+                                <ImageView
+                                    android:id="@+id/imgsub3"
+                                    android:layout_width="150dp"
+                                    android:layout_height="80dp"
+                                    android:contentDescription="@string/ketawai"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_subketawai_3"
+                                    tools:ignore="ImageContrastCheck" />
+                            </androidx.cardview.widget.CardView>
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnTentang"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvTentang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:fontFamily="@font/helveticabold"
+                        android:text="@string/tentang"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck" />
+                    <TextView
+                        android:id="@+id/tvSubTentang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helveticabold"
+                        android:textStyle="bold"
+                        android:text="@string/LOKASI"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/tvAlamat"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica"
+                        android:text="@string/alamat"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/tvSubProvinsi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:fontFamily="@font/helveticabold"
+                        android:textStyle="bold"
+                        android:text="@string/provinsi"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                    <TextView
+                        android:id="@+id/tvSubProvinsitxt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica"
+                        android:text="@string/provinsitxt"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/black" />
+
+                <LinearLayout
+                    android:id="@+id/lnDeskripsi"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tvDeskripsi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:fontFamily="@font/helveticabold"
+                        android:text="@string/deskripsi"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        tools:ignore="TextSizeCheck" />
+                    <TextView
+                        android:id="@+id/tvSubDeskripsi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica"
+                        android:layout_marginTop="8dp"
+                        android:text="@string/txtDeskripsi"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:lineSpacingExtra="6dp"
+                        android:lineSpacingMultiplier="1.2"
+                        tools:ignore="TooManyViews,VisualLintLongText" />
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view_maps"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="4dp">
+                    <FrameLayout
+                        android:id="@+id/map_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp">
+                        <fragment
+                            android:id="@+id/map"
+                            android:name="com.google.android.gms.maps.SupportMapFragment"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            tools:context=".maps.MapsFragment"
+                            tools:ignore="FragmentTagUsage" />
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <LinearLayout
+                    android:id="@+id/lnPemandu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:id="@+id/tvPemandu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:fontFamily="@font/helveticabold"
+                        android:text="@string/pemandu"
+                        android:textColor="@color/black"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvPemandu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/pemandu"
+                        android:orientation="vertical"
+                        tools:listitem="@layout/items_shimmer_pemandu" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/lnUlasan"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+                        <TextView
+                            android:id="@+id/tvUlasan"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/helveticabold"
+                            android:text="@string/ulasan"
+                            android:textColor="@color/black"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/skipButton"
+                            android:layout_width="wrap_content"
+                            android:layout_height="40dp"
+                            android:background="@drawable/custom_button_background"
+                            android:textAllCaps="false"
+                            android:backgroundTint="@color/white"
+                            android:elevation="12dp"
+                            android:fontFamily="@font/helvetica"
+                            android:gravity="center"
+                            android:paddingHorizontal="16dp"
+                            android:text="@string/tulisulasan"
+                            android:textColor="@color/whitelight"
+                            android:textSize="14sp"
+                            android:translationZ="2dp"
+                            android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+                            android:layout_gravity="center_vertical" />
+                    </LinearLayout>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rvUlasan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/ulasan"
+                        android:orientation="vertical"
+                        tools:listitem="@layout/items_shimmer_ulasan" />
+                </LinearLayout>
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

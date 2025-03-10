@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.EditProfileActivity">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shimmer_auto_start="true"
+        app:shimmer_base_color="#E0E0E0"
+        app:shimmer_duration="1500"
+        app:shimmer_highlight_color="#B0B0B0">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/shimmer_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/bg_rounded_bottom"
+            android:elevation="1dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            tools:ignore="VisualLintBounds">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <View
+                    android:id="@+id/shimmer_back_button"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/rounded_circle_shimmer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/shimmer_edit_title"
+                    android:layout_width="120dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="45dp"
+                    android:background="@drawable/rounded_shimmer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/shimmer_back_button"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <View
+                android:id="@+id/shimmer_profile_picture"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="100dp"
+                android:background="@drawable/rounded_circle_shimmer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/shimmer_camera"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/rounded_circle_shimmer"
+                app:layout_constraintBottom_toBottomOf="@id/shimmer_profile_picture"
+                app:layout_constraintEnd_toEndOf="@id/shimmer_profile_picture" />
+
+            <View
+                android:id="@+id/shimmer_user_name"
+                android:layout_width="150dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/rounded_shimmer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_profile_picture" />
+
+            <View
+                android:id="@+id/shimmer_user_email"
+                android:layout_width="200dp"
+                android:layout_height="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_shimmer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_user_name" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_user_email"
+                tools:ignore="SpeakableTextPresentCheck">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <View
+                            android:id="@+id/shimmer_name_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/rounded_shimmer_placeholder" />
+
+                        <View
+                            android:id="@+id/shimmer_name_icon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/rounded_circle_shimmer" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <View
+                            android:id="@+id/shimmer_email_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/rounded_shimmer_placeholder" />
+
+                        <View
+                            android:id="@+id/shimmer_email_icon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/rounded_circle_shimmer" />
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp">
+
+                        <View
+                            android:id="@+id/shimmer_location_edit"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:background="@drawable/rounded_shimmer_placeholder" />
+
+                        <View
+                            android:id="@+id/shimmer_location_icon"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="16dp"
+                            android:background="@drawable/rounded_circle_shimmer" />
+                    </FrameLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/shimmer_btn_batal"
+                            android:layout_width="150dp"
+                            android:layout_height="65dp"
+                            android:background="@drawable/rounded_shimmer" />
+
+                        <View
+                            android:id="@+id/shimmer_btn_simpan"
+                            android:layout_width="150dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@drawable/rounded_shimmer" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="105dp"
+            android:layout_marginTop="-15dp"
+            android:background="@drawable/bg_rounded_bottom"
+            android:elevation="1dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            tools:ignore="VisualLintBounds">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageButton
+                    android:id="@+id/backButtonEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="45dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/BACK_DESC"
+                    android:src="@drawable/ic_back_white"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="TouchTargetSizeCheck" />
+
+                <TextView
+                    android:id="@+id/tvDetailEdit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="45dp"
+                    android:fontFamily="@font/helveticabold"
+                    android:text="@string/editdata"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/backButtonEdit"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.appcompat.widget.Toolbar>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/ivProfilePicture"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_marginTop="100dp"
+                android:layout_marginBottom="8dp"
+                android:contentDescription="@string/profile_picture"
+                android:src="@drawable/ic_profileacc"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivCameraIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:background="@drawable/ic_circular"
+                android:contentDescription="@string/profile_picture"
+                android:padding="4dp"
+                android:src="@drawable/ic_kamera"
+                app:layout_constraintBottom_toBottomOf="@id/ivProfilePicture"
+                app:layout_constraintEnd_toEndOf="@id/ivProfilePicture" />
+
+            <TextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/helveticabold"
+                android:text="@string/user_name"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivProfilePicture" />
+
+            <TextView
+                android:id="@+id/tvUserEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica"
+                android:text="@string/user_email"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUserName" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvUserEmail">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.seroean.apps.ui.customview.CustomViewName
+                            android:id="@+id/et_NameEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="5dp"
+                            android:drawableEnd="@drawable/ic_user"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/helvetica"
+                            android:inputType="textEmailAddress"
+                            android:maxLines="1"
+                            android:padding="16dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="14sp"
+                            tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.seroean.apps.ui.customview.CustomViewEmail
+                            android:id="@+id/et_EmailEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="5dp"
+                            android:drawableEnd="@drawable/ic_email"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/helvetica"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:enabled="false"
+                            android:inputType="phone"
+                            android:maxLines="1"
+                            android:padding="16dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="14sp"
+                            tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <com.seroean.apps.ui.customview.CustomViewLocation
+                            android:id="@+id/et_Lokasi"
+                            android:layout_width="match_parent"
+                            android:layout_height="55dp"
+                            android:layout_marginTop="5dp"
+                            android:drawableEnd="@drawable/ic_maps"
+                            android:drawablePadding="8dp"
+                            android:fontFamily="@font/helvetica"
+                            android:maxLines="1"
+                            android:padding="16dp"
+                            android:textColor="@color/black"
+                            android:textColorHint="@color/black"
+                            android:textSize="14sp"
+                            tools:ignore="SpeakableTextPresentCheck,VisualLintTextFieldSize" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="50dp"
+                        android:gravity="center_horizontal"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnBatal"
+                            android:layout_width="150dp"
+                            android:layout_height="65dp"
+                            android:backgroundTint="@color/lighblue"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/helveticabold"
+                            android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+                            android:text="@string/batal"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:translationZ="0dp"
+                            app:cornerRadius="8dp"
+                            tools:ignore="TextContrastCheck" />
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btnSimpan"
+                            android:layout_width="150dp"
+                            android:layout_height="65dp"
+                            android:layout_marginStart="16dp"
+                            android:backgroundTint="@color/deepblue"
+                            android:elevation="0dp"
+                            android:fontFamily="@font/helveticabold"
+                            android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+                            android:text="@string/simpan"
+                            android:textAllCaps="false"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:translationZ="0dp"
+                            app:cornerRadius="8dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

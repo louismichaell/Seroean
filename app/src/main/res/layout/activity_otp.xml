@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarOtp"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="10dp"
+        android:background="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/backButtonValidasiotp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/kembali"
+                android:src="@drawable/ic_back_black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/tvVerifikasiOtp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:fontFamily="@font/helveticabold"
+                android:text="@string/verifikasiotp"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/backButtonValidasiotp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:padding="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/Iv_Otp"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/otp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_otp" />
+
+        <TextView
+            android:id="@+id/tv_MsgEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/helveticabold"
+            android:text="@string/CONFIRM"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/textOtp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/helvetica"
+            android:alpha="0.4"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:text="@string/OTP_TEXT"
+            android:lineSpacingExtra="6dp"
+            android:lineSpacingMultiplier="1"
+            tools:ignore="TextContrastCheck" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:background="@drawable/edit_text_background">
+
+                <EditText
+                    android:id="@+id/otp_box_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edit_text_background"
+                    android:cursorVisible="false"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="28sp"
+                    tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edit_text_background">
+
+                <EditText
+                    android:id="@+id/otp_box_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edit_text_background"
+                    android:cursorVisible="false"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="28sp"
+                    tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edit_text_background">
+
+                <EditText
+                    android:id="@+id/otp_box_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edit_text_background"
+                    android:cursorVisible="false"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="28sp"
+                    tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edit_text_background">
+
+                <EditText
+                    android:id="@+id/otp_box_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/edit_text_background"
+                    android:cursorVisible="false"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="28sp"
+                    tools:ignore="LabelFor,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edit_text_background">
+
+                <EditText
+                    android:id="@+id/otp_box_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:importantForAutofill="no"
+                    android:inputType="phone"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="28sp"
+                    tools:ignore="LabelFor,SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="45dp"
+                android:layout_height="55dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/edit_text_background">
+
+                <EditText
+                    android:id="@+id/otp_box_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:autofillHints="phone"
+                    android:background="@null"
+                    android:cursorVisible="false"
+                    android:inputType="phone"
+                    android:maxLength="1"
+                    android:padding="12dp"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hinttext"
+                    android:fontFamily="@font/helvetica"
+                    android:textSize="28sp"
+                    tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="15dp" />
+
+        <TextView
+            android:id="@+id/countdownTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/helvetica"
+            android:layout_marginTop="16dp"
+            android:alpha="0.4"
+            android:textColor="@color/black"
+            android:textSize="12sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="250dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnVerify"
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:backgroundTint="@color/primary"
+                android:fontFamily="@font/helveticabold"
+                android:elevation="0dp"
+                android:translationZ="0dp"
+                android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+                android:text="@string/VERIFIED"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="8dp"
+                tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck,VisualLintButtonSize" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/progressOverlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        android:alpha="0.5"
+        android:visibility="gone"
+        tools:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminate="true"
+            android:layout_marginBottom="10dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            style="?android:attr/progressBarStyleLargeInverse"/>
+
+        <TextView
+            android:id="@+id/tvLoading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/memuat"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="gone"
+            tools:ignore="TextContrastCheck"
+            tools:visibility="visible" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

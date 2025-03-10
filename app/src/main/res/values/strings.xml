@@ -1,0 +1,269 @@
+<resources>
+    <string name="app_name">Seroean</string>
+    <string name="onboarding1">Onboarding 1</string>
+    <string name="onboarding2">Onboarding 2</string>
+    <string name="onboarding3">Onboarding 3</string>
+    <string name="onboardingtext1">Eksplorasi Budaya</string>
+    <string name="onboardingtext2">Rekomendasi Wisata</string>
+    <string name="onboardingtext3">Komunitas &amp; Interaksi</string>
+    <string name="onboardingsubtext1">"Jelajahi cerita, tradisi, dan warisan budaya yang kaya akan makna"</string>
+    <string name="onboardingsubtext2">"Temukan destinasi budaya dan alam terbaik yang tak terlupakan"</string>
+    <string name="onboardingsubtext3">"Gabung dengan komunitas, berbagi pengalaman, dan hidupkan kembali budaya"</string>
+    <string name="ERROR_LOAD_IMAGES">Gagal memuat gambar, Silahkan coba lagi.</string>
+    <string name="BIODATA_UPLOAD_SUCCESS">Biodata berhasil diunggah.</string>
+    <string name="ERROR_UPLOAD_DATA">Gagal mengunggah data, Silahkan coba lagi.</string>
+    <string name="ERROR_COMPRESSING_DATA">Terjadi kesalahan saat mengompresi data, Silahkan coba lagi.</string>
+    <string name="ERROR_IMAGE_EMPTY">Tidak ada gambar yang dipilih, Silakan unggah gambar.</string>
+    <string name="whatsapp_number">6281225635570</string>
+    <string name="whatsapp_message">Halo, saya ingin bertanya tentang</string>
+    <string name="NotifikasiContent">🔥 Kabar Terbaru! Cek Sekarang!</string>
+    <string name="NotifikasiTitle">Notifikasi Seroean</string>
+    <string name="halo">Halo,</string>
+    <string name="otp">OTP</string>
+    <string name="sharing">Bagikan wisata ini ke…</string>
+    <string name="UNAUTHORIZED">Unauthorized</string>
+    <string name="ERROR_UNAUTHORIZED">Akses Ditolak! Akun Anda belum diverifikasi.</string>
+    <string name="verifikasiotp">Verifikasi OTP</string>
+    <string name="lanjutkan">Silahkan Login dengan akun yang sudah dibuat sebelumnya.</string>
+    <string name="resend_in">Mohon tunggu %d detik untuk Kirim Ulang Kode OTP</string>
+    <string name="INFO_EMAIL_ALREADY_REGISTERED">Email sudah terdaftar</string>
+    <string name="INFO_CONTINUE_OTP">Silakan lanjutkan ke verifikasi OTP.</string>
+    <string name="RESEND_OTP_NOW">Kirim ulang OTP</string>
+    <string name="FAILED_INFO_REQUEST_OTP">Gagal Mengirim OTP</string>
+    <string name="SUCCESS_INFO_REQUEST_OTP">Berhasil Mengirim OTP</string>
+    <string name="FAILED_INFO_VERIFY_OTP">Gagal Verifikasi OTP</string>
+    <string name="SUCCESS_INFO_VERIFY_OTP">Berhasil Verifikasi OTP</string>
+    <string name="ERROR_OTP_EMPTY">Kode OTP tidak boleh kosong</string>
+    <string name="FAILED_INFO_FORGOT_PASS">Reset Kata Sandi Gagal</string>
+    <string name="SUCCESS_INFO_FORGOT_PASS">Reset Kata Sandi Berhasil</string>
+    <string name="msgReset">"Token reset kata sandi telah dikirim ke email."</string>
+    <string name="errorGoogle">Login dibatalkan, Silahkan coba lagi.</string>
+    <string name="failedGoogle">Terjadi kesalahan saat mencoba masuk.</string>
+    <string name="loginGoogle">Error Login Google</string>
+    <string name="loginSuccess">Login Berhasil</string>
+    <string name="loginFailed">Login Gagal</string>
+    <string name="regisSuccess">Daftar Berhasil</string>
+    <string name="regisFailed">Daftar Gagal</string>
+    <string name="Berikutnya">Berikutnya</string>
+    <string name="home">Beranda</string>
+    <string name="budaya">Budaya</string>
+    <string name="profile">Pengguna</string>
+    <string name="maps">Peta</string>
+    <string name="notfoundmaps">Lokasi Tidak Ditemukan</string>
+    <string name="wisata">Wisata</string>
+    <string name="kuliner">Kuliner</string>
+    <string name="sejarah">Sejarah</string>
+    <string name="tentang">Tentang</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="Pencarian">Pencarian Teratas</string>
+    <string name="txtFoto">Foto - Foto Disini</string>
+    <string name="txtSubFoto">Beberapa Foto yang Bisa Kamu Lihat</string>
+    <string name="Notifikasi">Notifikasi</string>
+    <string name="Dashboard">Background Dashboard</string>
+    <string name="Welcometxt">Halo, Louis Michael</string>
+    <string name="Welcome_subtxt">Jelajahi Keragaman Budaya dan Wisata</string>
+    <string name="search_hint">Temukan Keragaman yang Menarik di Sekitarmu</string>
+    <string name="search_hint_maps">Temukan Wisata dan Kuliner yang Ada di Sekitarmu</string>
+    <string name="search_hint_questions">Cari di pertanyaan umum…</string>
+    <string name="ic_arrow_right">Slide Ke Kanan Untuk Lanjut</string>
+    <string name="skip">Skip</string>
+    <string name="atau">atau</string>
+    <string name="kembali">Kembali</string>
+    <string name="memuat">Memuat…</string>
+    <string name="move">Lanjut</string>
+    <string name="rating">4.5</string>
+    <string name="share">Bagikan</string>
+    <string name="batal">Batal</string>
+    <string name="simpan">Simpan</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="user_name">Andri</string>
+    <string name="user_email">Andriking23@gmail.com</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="disukai">Disukai</string>
+    <string name="exit">Keluar</string>
+    <string name="lokasi_image">Lokasi Gambar</string>
+    <string name="subquestions">Pertanyaan ini sering Sobat Seroean\ntanyakan, Kamu bisa cari disini ya.</string>
+    <string name="general_questions">Pertanyaan Umum</string>
+    <string name="questions">Bagaimana saya mengubah atau mereset kata sandi?</string>
+    <string name="about_us">Tentang Kami</string>
+    <string name="alamat">P8MG+6G, Kurau, Kec. Koba, Kabupaten Bangka Tengah, Kepulauan Bangka Belitung</string>
+    <string name="provinsitxt">Kepulauan Bangka Belitung</string>
+    <string name="lainnya">Lainnya</string>
+    <string name="noTelp">Nomor Telepon</string>
+    <string name="versi">Versi 1.0.1</string>
+    <string name="tipe">Akun</string>
+    <string name="tentangkami">Tentang Kami</string>
+    <string name="tentangSeroean">Seroean adalah aplikasi yang menghubungkan teknologi dengan budaya untuk melestarikan warisan lokal dan memperkuat kebersamaan sosial. Melalui fitur rekomendasi wisata dan budaya, kami membantu pengguna menemukan dan mengenal tradisi, seni, serta destinasi khas dari berbagai daerah.</string>
+    <string name="ketawai">Pulau Ketawai</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="sejarahbabel">Sejarah Bumi Serumpun Sebalai</string>
+    <string name="txtDeskripsi"><![CDATA[
+    Pulau Ketawai adalah salah satu pulau kecil kebanggaan masyarakat Bangka Tengah.
+    Pulau ini merupakan objek wisata yang berada di Kabupaten Bangka Tengah dan menjadi
+    salah satu destinasi menarik yang banyak dikunjungi wisatawan, baik dari Bangka Tengah
+    sendiri maupun dari luar daerah.\n\nPerjalanan menuju Pulau Ketawai dapat ditempuh dengan rute berikut:\n
+
+    1. Dari Bandara Depati Amir, pengunjung dapat menggunakan transportasi darat berupa taksi
+       atau transportasi umum menuju Desa Kurau. Perjalanan ini memakan waktu sekitar 30 menit
+       dengan jarak tempuh sekitar 35 km. Biaya transportasi umum sekitar Rp20.000 (dua puluh ribu rupiah).\n\n
+
+    2. Dari Desa Kurau, pengunjung dapat menyewa perahu milik nelayan setempat untuk mencapai Pulau Ketawai.
+       Biaya sewa perahu bervariasi tergantung hasil negosiasi dengan pemilik perahu. Perjalanan dari Desa
+       Kurau ke Pulau Ketawai memakan waktu sekitar 1 jam.
+
+    Disarankan untuk menyewa perahu secara rombongan agar dapat menekan biaya sewa seminimal mungkin.
+]]></string>
+    <string name="txtdeskripsisejarah">Pelan tapi pasti, Bangka Belitung terus bersolek. Kecantikannya tak hanya dirasakan penduduk lokal. Secara nasional, termasuk dunia, juga turut merasakan pesonanya. Ini jelas kebanggaan, juga prestasi, mengingat Bangka Belitung merupakan provinsi baru, terbentuk pada tahun 2000. Provinsi Kepulauan Bangka Belitung terdiri dari dua pulau besar, yakni Pulau Bangka dan Pulau Belitung. Ada juga pulau-pulau kecil lainnya. Di zaman kerajaan, wilayah ini masuk dalam kekuasaan Sriwijaya,
+        Majahapit, juga Mataram Setelahnya, Bangka Belitung menjadi daerah jajahan Inggris. Pada 10 Desember 1816, dilaksanakan serah terima kepada pemerintah Belanda, berlangsung di Muntok.
+\n\nPada masa penjajahan Belanda, terjadi perlawanan, dilakukan oleh Depati Barin. Perlawanan kemudian dilanjutkan putranya, Depati Amir, hingga berakhir dengan pengasingan ke Kupang, Nusa Tenggara Timur. Selama masa penjajahan, banyak kekayaan di pulau ini dirampas. Kendati demikian, Bangka Belitung mampu bertahan, termasuk melakukan sejumlah perlawanan. Baru pada tahun 2000, Bumi Serumpun Sebalai resmi menjadi wilayah otonom.
+Ketika itu, Pemerintah Republik Indonesia mengakui keberadaan Bangka Belitung sebagai provinsi, tak lagi menginduk bersama Sumatera Selatan. Penetapan ini dikukuhkan berdasarkan Undang-Undang Nomor 27 Tahun 2000.</string>
+    <string name="txtdeskripsibudaya">
+    Tradisi Perang Ketupat masih lestari di Desa Tempilang, Kabupaten Bangka, Provinsi Bangka Belitung.
+    Tradisi ini bertujuan meminta keselamatan dan perlindungan kepada Tuhan Yang Maha Esa agar terhindar dari hal-hal yang tidak diinginkan. Asal mula tradisi ini adalah pada zaman dahulu, di Desa Tempilang banyak anak gadis yang diambil dan dimakan siluman buaya.
+    Kondisi Desa Tempilang pada saat itu sangat mencekam dan sebagian masyarakat merasa ketakutan.
+    Untuk mengatasi masalah tersebut lalu beberapa dukun berinisiatif untuk mengadakan ritual secara bersama-sama untuk mencegah terjadinya musibah yang lebih besar lagi.
+    Dalam perkembangan selanjutnya ritual tersebut oleh masyarakat Desa Tempilang yang dinamakan tradisi Perang Ketupat.\n\nTradisi Perang Ketupat dilaksanakan pada minggu ketiga di bulan Sya’ban.
+    Simbol dan makna dalam tradisi Perang Ketupat adalah ketupat yang mempunyai makna persatuan, kesatuan, kesadaran, dan kegotongroyongan.
+    Sesaji mempunyai makna satu kekeluargaan dalam kehidupan bermasyarakat sehingga terciptanya kehidupan bersama.
+    Ada prosesi nganyot perae atau menghanyutkan perahu dengan makna untuk memulangkan tamu-tamu makhluk halus yang datang ke Desa Tempilang terutama yang bermaksud jahat agar tidak mengganggu masyarakat desa Tempilang.
+    Ada prosesi ngancak yaitu pemberian makanan kepada makhluk halus yang dipercayai bermukim di laut agar mereka tidak mengganggu aktivitas nelayan pada saat pergi melaut.
+    Selain itu ada prosesi penimbongan yaitu pemberian makanan kepada makhluk halus yang dipercayai bermukim di darat agar mereka tidak mengganggu masyarakat setempat. \n\nNilai-nilai yang ada dalam tradisi Perang Ketupat adalah nilai agama yang mencakup nilai aqidah, nilai syariah, dan nilai akhlak.
+    Nilai budaya yang tercermin dalam beberapa hal, yakni pantangan tiga hari, menghanyutkan perahu, dukun tidak boleh mempublikasikan nama-nama makhluk halus.
+    Nilai sosial yang mencakup gotong royong dan kebersamaan.
+    Sedangkan fungsi dari tradisi Perang Ketupat secara garis besar adalah sebagai kebersamaan sosial dan aset pariwisata.\n\nUpacara Perang Ketupat bisa juga dikategorikan sebagai ritual selamatan.
+    Selamatan berasal dari bahasa Arab yang artinya selamat, sentosa, lepas dari bahaya.
+    Menurut Clifford Geertz, selamatan terbagi dalam empat jenis:
+    Pertama, berkisar pada persoalan krisis-krisis kehidupan, seperti kelahiran, khitanan, perkawinan, kematian.
+    Kedua, berhubungan dengan hari raya Islam seperti Maulid Nabi, Idul Fitri, Idul Adha.
+    Ketiga, berhubungan dengan integrasi sosial.
+    Keempat, yaitu selamatan yang diselenggarakan dalam waktu yang tidak tepat, tergantung pada kejadian yang luar biasa,
+    yang dialami seseorang seperti keberangkatan untuk suatu perjalanan jauh, pindah tempat, ganti nama dan lain sebagainya.
+    Tradisi Perang Ketupat terdapat pada kategori yang ketiga yaitu berhubungan dengan integrasi sosial seperti bersih Desa (pembersihan dari roh jahat).
+</string>
+    <string name="lempahMuara">Lempah Kuning Muara</string>
+    <string name="alamatlempah">Jl. Jenderal Sudirman No.38, Sungailiat, Sungai Liat, Kabupaten Bangka, Kepulauan Bangka Belitung 33211</string>
+    <string name="emptynotifikasi">Oops! Sepertinya belum ada\nNotifikasi untuk Anda. Tetap pantau di sini, ya!</string>
+    <string name="emptyfavorite">Belum ada yang Kamu sukai.\nTemukan sesuatu yang menarik dan tambahkan ke favoritmu!</string>
+    <string name="nomorhp">083164972776</string>
+    <string name="titleNotifikasi">Lihat Sejarah dan Budaya di Sekitar Kamu</string>
+    <string name="hubungi">Hubungi Kami</string>
+    <string name="jelajahi">Jelajahi Sekarang</string>
+    <string name="updatetitle">Terakhir diperbarui</string>
+    <string name="datetime">02 Maret 2025, 11.30 WIB</string>
+    <string name="bantuan">Masih membutuhkan bantuan?</string>
+    <string name="txtbantuan">Gunakan tombol hubungi Seroean untuk langsung menanyakan pertanyaan kamu.</string>
+    <string name="pertanyaan">Bagaimana cara mendaftar di Seroean?</string>
+    <string name="jawaban">Untuk mendaftar di Seroean, kamu cukup membuat akun dengan mengisi nama, email, dan kata sandi. Setelah itu, lakukan verifikasi email untuk mengaktifkan akunmu. Setelah pendaftaran selesai, kamu dapat menyesuaikan profil dan mulai menikmati fitur Seroean.</string>
+    <string name="opsi">Opsi Layanan</string>
+    <string name="telepon">Telepon</string>
+    <string name="opsilayanan">Menyediakan tempat duduk di area terbuka, Ada menu anak</string>
+    <string name="rating_star">Rating</string>
+    <string name="perangketupat">Perang Ketupat</string>
+    <string name="editdata">Edit Data</string>
+    <string name="detailwisata">Detail Wisata</string>
+    <string name="detailkuliner">Detail Kuliner</string>
+    <string name="detailsejarah">Detail Sejarah</string>
+    <string name="detailbudaya">Detail Budaya</string>
+    <string name="detailpertanyaan">Detail Pertanyaan</string>
+    <string name="pemandu">Pemandu Lokal</string>
+    <string name="ulasan">Ulasan</string>
+    <string name="namauser">Louis Michael</string>
+    <string name="komentaruser">Saya berharap bisa datang ke tempat ini lagi</string>
+    <string name="tulisulasan">Tulis Ulasan</string>
+    <string name="VERIFIED">Verifikasi</string>
+    <string name="FORGOT_PASS">Lupa Kata Sandi?</string>
+    <string name="OTP_TEXT">Kode OTP telah kami kirimkan ke email kamu %s</string>
+    <string name="welcome">Selamat Datang</string>
+    <string name="txt_welcome">Selamat Datang di Seroean</string>
+    <string name="txt_subwelcome">Jelajahi keindahan alam dan budaya dalam satu genggamanmu, semua bisa dieksplorasi di aplikasi!</string>
+    <string name="BTN_RETRY">Kembali</string>
+    <string name="tb_storyupload">Unggah Story</string>
+    <string name="btn_choose_image">Pilih Gambar dari Galeri</string>
+    <string name="btn_take_photo">Ambil Foto dari Kamera</string>
+    <string name="tv_descstoryupload">Isi Deskripsi Story</string>
+    <string name="btn_upload_image">Unggah Story</string>
+    <string name="btn_floating">Unggah Gambar Story</string>
+    <string name="BACK_DESC">Tombol Kembali</string>
+    <string name="IMAGE_DESC_STORY">Gambar Story</string>
+    <string name="IMAGE_UPLOAD_SUCCESS">Story Diposting Berhasil</string>
+    <string name="ERROR_EMAIL_INVALID_FORMAT">Format email yang dimasukkan tidak valid</string>
+    <string name="ERROR_EMAIL_ALREADY_REGISTERED">Email sudah digunakan, Silahkan gunakan email lain.</string>
+    <string name="ERROR_EMAIL_EMPTY">Email tidak boleh kosong</string>
+    <string name="ERROR_NAME_EMPTY">Nama tidak boleh kosong</string>
+    <string name="ERROR_LOCATION_EMPTY">Alamat tidak boleh kosong</string>
+    <string name="ERROR_PASSWORD_EMPTY">Kata sandi tidak boleh kosong</string>
+    <string name="ERROR_PASSWORD_LENGTH">Kata sandi harus minimal 8 karakter</string>
+    <string name="ERROR_PASSWORD_MISMATCH">Kata sandi dan konfirmasi kata sandi tidak cocok</string>
+    <string name="ERROR_PASSWORD_NOTSAME">Password atau email yang anda masukkan salah</string>
+    <string name="ERROR_NAME_TOOLONG">Nama tidak boleh melebihi 25 karakter</string>
+    <string name="ERROR_LOCATION_TOOLONG">Alamat tidak boleh melebihi 100 karakter</string>
+    <string name="ERROR_EDITEXT_EMPTY">Silahkan isi semua bidang dengan benar.</string>
+    <string name="INFO_FORGOT_PASS">Reset Kata Sandi</string>
+    <string name="MSG_FORGOT">Masukkan email akun Seroean kamu untuk mendapatkan instruksi reset kata sandi.</string>
+    <string name="SEND_TEXT">Kirim</string>
+    <string name="CONFIRM">"Konfirmasi Email Kamu"</string>
+    <string name="INFO_LOGIN_TEXT">Sudah Punya Akun?</string>
+    <string name="LOGIN_TEXT">Masuk</string>
+    <string name="LOGIN_GOOGLE">Lanjutkan dengan Google</string>
+    <string name="LOGIN_APP_TEXT">Login Story Apps</string>
+    <string name="WELCOME_LOGIN_TEXT">Welcome, Story Apps</string>
+    <string name="INFO_REGISTER_TEXT">Belum Punya Akun?</string>
+    <string name="REGISTER_TEXT">Daftar</string>
+    <string name="REGISTER_APP_TEXT">Register Story Apps</string>
+    <string name="WELCOME_REGISTER_TEXT">Sign up, Story Apps</string>
+    <string name="IMAGE_SHOW_FAILED">Gagal memulai penampilan gambar, Lihat log kesalahan untuk detailnya.</string>
+    <string name="IMAGE_CAPTURE_FAILED">Gagal memulai pengambilan gambar, Lihat log kesalahan untuk detailnya.</string>
+    <string name="IMAGE_UPLOAD_EMPTY">Gambar tidak boleh kosong</string>
+    <string name="LOCATION_UPLOAD_EMPTY">Lokasi tidak boleh kosong</string>
+    <string name="CAPTION_UPLOAD_EMPTY">Keterangan tidak boleh kosong</string>
+    <string name="ERROR_STORY_WIDGET_EMPTY">Widget Story Kosong</string>
+    <string name="NOT_FOUND_DATA">Tidak Ada Data…</string>
+    <string name="SETTINGS">Pengaturan</string>
+    <string name="CHANGE_LANGUAGE">Ubah Bahasa</string>
+    <string name="REPORT_BUG">Laporkan Bug</string>
+    <string name="LOGOUT">Keluar</string>
+    <string name="LAST_LOGIN">Terakhir Masuk</string>
+    <string name="TITLE_WELCOME_PAGE">Selamat Datang Di Story Apps!</string>
+    <string name="MESSAGE_WELCOME_PAGE">Selamat datang di Story Apps! Di sini, Anda bisa berbagi cerita-cerita unik Anda dengan dunia secara instan. Mulailah petualangan kreatif Anda dengan mengunggah cerita-cerita Anda sendiri.</string>
+    <string name="LOGOUT_CONFIRMATION_TITLE">Konfirmasi Logout</string>
+    <string name="LOGOUT_CONFIRMATION_MESSAGE">Apakah Anda yakin ingin Keluar?</string>
+    <string name="LOGOUT_CONFIRMATION_YES">Ya</string>
+    <string name="LOGOUT_CONFIRMATION_CANCEL">Batal</string>
+    <string name="INFO">Info Lainnya</string>
+    <string name="MSG_REGISTER">Mulai perjalananmu bersama kami! Lengkapi data registrasi dan jelajahi fitur terbaik kami.</string>
+    <string name="MSG_LOGIN">Masuk untuk mulai menjelajahi budaya dan wisata!</string>
+    <string name="MSG_DETAIL_STORY">Detail Story</string>
+    <string name="COPYRIGHT">Hak seroean Dilindungi Undang-undang.</string>
+    <string name="FULL_NAME">Nama Lengkap</string>
+    <string name="EMAIL">Email</string>
+    <string name="LOKASI">Alamat</string>
+    <string name="PASSWORD">Kata Sandi</string>
+    <string name="CONFIRM_PASSWORD">Konfirmasi Kata Sandi</string>
+    <string name="HINT_FULL_NAME">Masukkan Nama Lengkap Anda</string>
+    <string name="HINT_EMAIL">Masukkan Email Anda</string>
+    <string name="HINT_LOKASI">Masukkan Alamat Anda</string>
+    <string name="HINT_PASSWORD">Masukkan Kata Sandi Anda</string>
+    <string name="HINT_ULASAN">Masukkan Ulasan Anda</string>
+    <string name="posting">Posting</string>
+    <string name="detail">Detail</string>
+    <string name="topwisata">Top Wisata</string>
+    <string name="topkuliner">Top Kuliner</string>
+    <string name="postinganTarget">Memposting untuk Publik</string>
+    <string name="HINT_CONFIRM_PASSWORD">Masukkan Kata Sandi Anda</string>
+    <string name="ERROR_PERMISSION">Akses ke lokasi Anda ditolak. Mohon izinkan untuk mengaktifkan fitur ini.</string>
+    <string name="ERROR_LOCATION_OFF">Layanan lokasi pada perangkat Anda sedang dimatikan. Mohon aktifkan untuk menggunakan fitur ini.</string>
+    <string name="MY_LOCATION">Gunakan Lokasi Terakhir Saya</string>
+    <string name="PICK_LOCATION">Ketuk peta untuk memilih lokasi</string>
+    <string name="PICK_MY_LOCATION">Gunakan Lokasi yang saya pilih</string>
+    <string name="PICK_POINT_STARTS">Pilih Titik Mulai</string>
+    <string name="TOOLTIPS">Peta Detail Tooltip</string>
+    <string name="TOOLTIPS_IMAGE">Tooltip Peta Gambar</string>
+    <string name="AGREE">Iya</string>
+    <string name="DISAGREE">Batal</string>
+    <string name="USE_LOCATION">Apakah akan anda menggunakan lokasi ini?</string>
+    <string name="NOTFOUND_USE_LOCATION">Lokasi tidak ditemukan</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

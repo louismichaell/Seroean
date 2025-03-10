@@ -1,0 +1,634 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".ui.beranda.HomeFragment">
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmer_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:shimmer_auto_start="true"
+        app:shimmer_base_color="#E0E0E0"
+        app:shimmer_duration="1500"
+        app:shimmer_highlight_color="#B0B0B0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:id="@+id/shimmer_background"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:background="@drawable/rounded_shimmer_placeholder"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/shimmer_profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/rounded_circle_shimmer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/shimmer_hi_nama"
+                android:layout_width="100dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_shimmer"
+                app:layout_constraintStart_toEndOf="@id/shimmer_profile"
+                app:layout_constraintTop_toTopOf="@id/shimmer_profile" />
+
+            <View
+                android:id="@+id/shimmer_sambutan"
+                android:layout_width="150dp"
+                android:layout_height="12dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_shimmer"
+                app:layout_constraintStart_toEndOf="@id/shimmer_profile"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_hi_nama" />
+
+            <View
+                android:id="@+id/shimmer_notification"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_circle_shimmer"
+                app:layout_constraintBottom_toBottomOf="@id/shimmer_profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/shimmer_profile" />
+
+            <View
+                android:id="@+id/shimmer_badge_notification"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/rounded_circle_shimmer"
+                app:layout_constraintEnd_toEndOf="@id/shimmer_notification"
+                app:layout_constraintTop_toTopOf="@id/shimmer_notification" />
+
+            <FrameLayout
+                android:id="@+id/shimmer_search"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/rounded_shimmer"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <View
+                    android:id="@+id/shimmer_search_icon"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/rounded_circle_shimmer" />
+
+                <View
+                    android:id="@+id/shimmer_search_hint"
+                    android:layout_width="120dp"
+                    android:layout_height="16dp"
+                    android:layout_gravity="center_vertical|start"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/rounded_shimmer" />
+            </FrameLayout>
+
+            <View
+                android:id="@+id/shimmer_pencarian_text"
+                android:layout_width="100dp"
+                android:layout_height="16dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/rounded_shimmer"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_search" />
+
+            <LinearLayout
+                android:id="@+id/shimmer_categories"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center_horizontal"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shimmer_pencarian_text">
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_circle_shimmer" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_shimmer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_circle_shimmer" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_shimmer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_circle_shimmer" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_shimmer" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="12dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <View
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_circle_shimmer" />
+
+                    <View
+                        android:layout_width="60dp"
+                        android:layout_height="12dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/rounded_shimmer" />
+                </LinearLayout>
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:id="@+id/shimmer_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="250dp"
+                android:background="@color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="15dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <View
+                            android:id="@+id/shimmer_title_kuliner"
+                            android:layout_width="120dp"
+                            android:layout_height="16dp"
+                            android:background="@drawable/rounded_shimmer_placeholder" />
+
+                        <View
+                            android:id="@+id/shimmer_sub_title_kuliner"
+                            android:layout_width="60dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="180dp"
+                            android:background="@drawable/rounded_shimmer_placeholder" />
+                    </LinearLayout>
+
+                    <HorizontalScrollView
+                        android:id="@+id/shimmer_kuliner_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:overScrollMode="never"
+                        android:scrollbars="none">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/shimmer_rv_kuliner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            android:contentDescription="@string/kuliner"
+                            tools:listitem="@layout/items_shimmer_placeholder" />
+                    </HorizontalScrollView>
+
+                    <View
+                        android:id="@+id/shimmer_title_wisata"
+                        android:layout_width="120dp"
+                        android:layout_height="16dp"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="15dp"
+                        android:background="@drawable/rounded_shimmer_placeholder" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/shimmer_wisata_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:overScrollMode="never"
+                        android:scrollbars="none">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/shimmer_rv_wisata"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="16dp"
+                            tools:listitem="@layout/items_shimmer_placeholder" />
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.facebook.shimmer.ShimmerFrameLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/content_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cview_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:ignore="MissingConstraints">
+
+            <ImageView
+                android:id="@+id/imageapps"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/Dashboard"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_bgdashboard"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/Profile"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/ic_circular"
+                android:contentDescription="@string/profile"
+                android:src="@drawable/ic_profileacc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/notifikasi"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="@string/Notifikasi"
+                android:src="@drawable/ic_notification"
+                app:layout_constraintBottom_toBottomOf="@+id/Profile"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/Profile" />
+
+            <View
+                android:id="@+id/badgeNotification"
+                android:layout_width="8dp"
+                android:layout_height="8dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/ic_badge"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/notifikasi"
+                app:layout_constraintTop_toTopOf="@+id/notifikasi"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/tvHiNama"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/helveticabold"
+                android:text="@string/Welcometxt"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/Profile"
+                app:layout_constraintTop_toTopOf="@+id/Profile" />
+
+            <TextView
+                android:id="@+id/tvSambutan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/helvetica"
+                android:text="@string/Welcome_subtxt"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:textStyle="italic"
+                app:layout_constraintStart_toEndOf="@+id/Profile"
+                app:layout_constraintTop_toBottomOf="@+id/tvHiNama" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search"
+                style="@style/SearchViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/search_hint"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="VisualLintTextFieldSize" />
+
+            <TextView
+                android:id="@+id/tvPencarian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/helveticabold"
+                android:text="@string/Pencarian"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/search" />
+
+            <LinearLayout
+                android:id="@+id/ln_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvPencarian">
+
+                <LinearLayout
+                    android:id="@+id/ln_Wisata"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:contentDescription="@string/wisata"
+                        android:src="@drawable/ic_wisata" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="@font/helvetica"
+                        android:text="@string/wisata"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_Budaya"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:contentDescription="@string/budaya"
+                        android:src="@drawable/ic_imgbudaya" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="@font/helvetica"
+                        android:text="@string/budaya"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_Kuliner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:contentDescription="@string/budaya"
+                        android:src="@drawable/ic_kuliner" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="@font/helvetica"
+                        android:text="@string/kuliner"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ln_Sejarah"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="16dp"
+                    android:orientation="vertical"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:contentDescription="@string/budaya"
+                        android:src="@drawable/ic_sejarah" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="1dp"
+                        android:fontFamily="@font/helvetica"
+                        android:text="@string/sejarah"
+                        android:textColor="@color/white" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="250dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ln_menu">
+
+                <LinearLayout
+                    android:id="@+id/Llitems"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/tvKuliner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/helvetica"
+                            android:text="@string/kuliner"
+                            android:textColor="@color/black"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/tvLainnya"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="250dp"
+                            android:fontFamily="@font/helvetica"
+                            android:text="@string/lainnya"
+                            android:textColor="@color/primary"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            tools:ignore="TextContrastCheck" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rvKuliner"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:contentDescription="@string/kuliner"
+                            android:orientation="horizontal" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvWisata"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:fontFamily="@font/helvetica"
+                        android:text="@string/wisata"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizontalScrollViewHome3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:overScrollMode="never"
+                        android:scrollbars="none">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <androidx.recyclerview.widget.RecyclerView
+                                android:id="@+id/rvWisata"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:contentDescription="@string/wisata" />
+                        </LinearLayout>
+                    </HorizontalScrollView>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

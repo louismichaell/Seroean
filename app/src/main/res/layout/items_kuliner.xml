@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    android:layout_width="200dp"
+    android:layout_height="200dp"
+    android:layout_gravity="center"
+    android:layout_margin="8dp"
+    card_view:cardCornerRadius="16dp"
+    card_view:cardBackgroundColor="@color/white"
+    card_view:cardPreventCornerOverlap="false">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imgKuliner"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:contentDescription="@string/kuliner"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/ic_lempahmuara" />
+
+        <LinearLayout
+            android:id="@+id/rating_favorite_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/ratingCard"
+                android:layout_width="60dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="16dp"
+                android:padding="8dp"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="32dp"
+                card_view:cardElevation="4dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    tools:ignore="UseCompoundDrawables">
+
+                    <ImageView
+                        android:id="@+id/iconStar"
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:layout_marginStart="4dp"
+                        android:layout_marginTop="4dp"
+                        android:contentDescription="@string/rating_star"
+                        android:src="@drawable/ic_star"
+                        tools:ignore="VisualLintBounds,ImageContrastCheck" />
+
+                    <TextView
+                        android:id="@+id/tvRatingCount"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/helvetica"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginStart="2dp"
+                        android:layout_marginEnd="4dp"
+                        android:text="@string/rating"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        tools:ignore="VisualLintBounds" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cv_favorite"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="80dp"
+                android:gravity="center"
+                card_view:cardBackgroundColor="@color/white"
+                card_view:cardCornerRadius="20dp"
+                card_view:cardElevation="4dp">
+
+                <ImageButton
+                    android:id="@+id/favorite"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/title_favorite"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/ic_favorite"
+                    tools:ignore="TouchTargetSizeCheck" />
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            card_view:cardBackgroundColor="@color/white_transparent"
+            card_view:cardCornerRadius="8dp"
+            tools:ignore="TextSizeCheck">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="25dp"
+                android:alpha="1"
+                android:fontFamily="@font/helvetica"
+                android:text="@string/lempahMuara"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/move"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="end|center"
+                android:layout_margin="4dp"
+                android:alpha="1.0"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/move"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_move"
+                tools:ignore="TouchTargetSizeCheck,ImageContrastCheck" />
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/white">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <ImageView
+            android:id="@+id/Profile"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:contentDescription="@string/profile"
+            android:background="@drawable/ic_circular"
+            android:src="@drawable/ic_profileacc"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <TextView
+            android:id="@+id/tvHiNama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/helveticabold"
+            android:text="@string/namauser"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/Profile"
+            app:layout_constraintTop_toTopOf="@id/Profile" />
+
+        <TextView
+            android:id="@+id/tvKomentar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/komentaruser"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toEndOf="@id/Profile"
+            app:layout_constraintTop_toBottomOf="@id/tvHiNama"
+            app:layout_constraintBottom_toBottomOf="@id/Profile" />
+
+        <RatingBar
+            android:id="@+id/ratingBarUlasan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="4dp"
+            android:numStars="5"
+            android:stepSize="0.5"
+            android:isIndicator="true"
+            android:rating="4.5"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:secondaryProgressTint="@android:color/transparent"
+            android:progressTint="@color/rating"
+            app:layout_constraintStart_toEndOf="@id/Profile"
+            app:layout_constraintTop_toBottomOf="@id/tvKomentar"/>
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/helvetica"
+            android:text="@string/datetime"
+            android:textSize="11sp"
+            app:layout_constraintStart_toEndOf="@id/Profile"
+            app:layout_constraintTop_toBottomOf="@id/ratingBarUlasan" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

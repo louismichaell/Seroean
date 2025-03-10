@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_marginTop="-15dp"
+        android:background="@drawable/bg_rounded_bottom"
+        android:elevation="1dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/backbuttonFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/BACK_DESC"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <TextView
+                android:id="@+id/tvFavorite"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="45dp"
+                android:fontFamily="@font/helveticabold"
+                android:text="@string/disukai"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@id/backbuttonFavorite"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp"
+        android:padding="8dp">
+
+        <HorizontalScrollView
+            android:id="@+id/horizontalScrollViewHome3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            tools:ignore="MissingConstraints">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvFavorite"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription="@string/disukai"
+                    tools:listitem="@layout/items_shimmer_placeholder" />
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <ImageView
+            android:id="@+id/ivImage"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_marginTop="200dp"
+            android:src="@drawable/ic_empty_favorite"
+            android:contentDescription="@string/disukai"
+            android:layout_marginBottom="8dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTextFavorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/helvetica"
+            android:textColor="@color/black"
+            android:text="@string/emptyfavorite"
+            android:gravity="center_horizontal"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:lineSpacingExtra="6dp"
+            android:lineSpacingMultiplier="1"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/ivImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnJelajahi"
+            android:layout_width="wrap_content"
+            android:layout_height="65dp"
+            android:layout_marginTop="15dp"
+            android:backgroundTint="@color/deepblue"
+            android:fontFamily="@font/helveticabold"
+            android:elevation="0dp"
+            android:translationZ="0dp"
+            android:stateListAnimator="@android:anim/accelerate_decelerate_interpolator"
+            android:text="@string/jelajahi"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="8dp"
+            android:visibility="gone"
+            tools:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/tvTextFavorite"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="DuplicateSpeakableTextCheck,TextContrastCheck,VisualLintButtonSize" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

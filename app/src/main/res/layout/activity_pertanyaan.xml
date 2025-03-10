@@ -1,0 +1,109 @@
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="105dp"
+        android:layout_marginTop="-15dp"
+        android:background="@drawable/bg_rounded_bottom"
+        android:elevation="1dp"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:id="@+id/backButtonPertanyaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/BACK_DESC"
+                android:src="@drawable/ic_back_white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="TouchTargetSizeCheck" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.appcompat.widget.Toolbar>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="90dp">
+
+            <TextView
+                android:id="@+id/tvPertanyaan"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:fontFamily="@font/helveticabold"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:text="@string/general_questions" />
+
+            <TextView
+                android:id="@+id/tvSubPertanyaantxt"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/helvetica"
+                android:lineSpacingExtra="6dp"
+                android:lineSpacingMultiplier="1.2"
+                android:text="@string/subquestions"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                tools:ignore="TextSizeCheck" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/search"
+                style="@style/SearchViewStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_transparent"
+                android:layout_marginTop="20dp"
+                android:elevation="2dp"
+                android:hint="@string/search_hint_questions"
+                android:minHeight="48dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="VisualLintTextFieldSize,TextContrastCheck" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvPertanyaan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/general_questions"
+                tools:listitem="@layout/items_pertanyaan" />
+        </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
