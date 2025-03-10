@@ -4,7 +4,7 @@
 
 Unduh file APK dari Google Drive melalui link berikut:
 
-➡️ **[Download APK](0)**
+➡️ **[Download APK](https://drive.google.com/file/d/1xmoTOqSWyadEAdL9wIlg-PlBXOmVbW2p/view?usp=sharing)**
 
 ## ⚠️ Mengatasi Peringatan Keamanan
 
